@@ -1,53 +1,69 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   src/App.jsx
+   Root component. Handles auth gate + tab-based routing + shared layout.
+───────────────────────────────────────────────────────────────────────────── */
 
 import { useState } from 'react';
-import Dashboard from './components/Dashboard';
-import AuthPanel from './components/AuthPanel';
-import Standings from './components/Standings';
-import Predictions from './components/Predictions';
-import MyPreds from './components/MyPreds';
+import { useAuth } from './hooks/useAuth';
 
-const SECTIONS = [
-  { id: 'dashboard', label: 'Inicio', icon: '🏠', component: Dashboard },
-  { id: 'predictions', label: 'Pronósticos', icon: '⚽', component: Predictions },
-  { id: 'standings', label: 'Tabla', icon: '🏅', component: Standings },
-  { id: 'mypreds', label: 'Mis Picks', icon: '📋', component: MyPreds },
-];
+import Navbar      from './components/Navbar';
+import AuthPanel   from './components/AuthPanel';
+import Dashboard   from './components/Dashboard';
+import MyPreds     from './components/MyPreds';
+import Calendar    from './components/Calendar';
+import Mundial     from './components/Mundial';
+import MyProfile   from './components/MyProfile';
+
+const COMPONENTS = {
+  dashboard: Dashboard,
+  mypreds:   MyPreds,
+  calendar:  Calendar,
+  mundial:   Mundial,
+  myprofile: MyProfile,
+};
 
 export default function App() {
-  const [section, setSection] = useState('dashboard');
-  const [logged, setLogged] = useState(true); // Cambia a false para probar AuthPanel
+  const { user, loading } = useAuth();
+  const [activeTab, setActiveTab] = useState('dashboard');
 
-  if (!logged) return <AuthPanel />;
+  /* ── Loading splash ── */
+  if (loading) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        background: 'var(--bg)',
+      }}>
+        <div style={{ fontSize: '3.5rem', filter: 'drop-shadow(0 0 20px rgba(110,207,66,0.5))' }}>⚽</div>
+        <div className="bangers" style={{
+          fontSize: '1.8rem',
+          letterSpacing: '4px',
+          background: 'linear-gradient(90deg, var(--green), var(--light-green))',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}>
+          POLLA MUNDIAL 2026
+        </div>
+        <div className="spinner" />
+      </div>
+    );
+  }
 
-  const SectionComponent = SECTIONS.find(s => s.id === section)?.component || Dashboard;
+  /* ── Not logged in → show auth ── */
+  if (!user) return <AuthPanel />;
+
+  /* ── Main app ── */
+  const ActiveComponent = COMPONENTS[activeTab] ?? Dashboard;
 
   return (
-    <div style={{minHeight: '100vh', background: '#181824', color: '#fff'}}>
-      <header style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 2rem', background: '#12121C', borderBottom: '2px solid #FFD700'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
-          <span style={{fontSize: '2rem'}}>🏆</span>
-          <span style={{fontFamily: 'Bebas Neue, sans-serif', fontSize: '1.7rem', letterSpacing: '3px', background: 'linear-gradient(90deg,#FFD700,#fff,#F5A623)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>POLLA MUNDIAL 2026</span>
-        </div>
-        <nav style={{display: 'flex', gap: '0.5rem'}}>
-          {SECTIONS.map(s => (
-            <button key={s.id} onClick={() => setSection(s.id)} style={{
-              background: section === s.id ? '#FFD700' : 'transparent',
-              color: section === s.id ? '#181824' : '#FFD700',
-              border: '1px solid #FFD700',
-              borderRadius: 2,
-              padding: '0.5rem 1.2rem',
-              fontFamily: 'Oswald, sans-serif',
-              fontSize: '1rem',
-              letterSpacing: '2px',
-              cursor: 'pointer',
-              fontWeight: section === s.id ? 700 : 400
-            }}>{s.icon} {s.label}</button>
-          ))}
-        </nav>
-        <div style={{fontFamily: 'Oswald, sans-serif', color: '#FFD700', fontSize: '1rem'}}>Usuario Demo</div>
-      </header>
-      <main>
-        <SectionComponent />
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
+      <main style={{ flex: 1, paddingBottom: '70px' /* space for mobile bottom nav */ }}>
+        <ActiveComponent onTabChange={setActiveTab} />
       </main>
     </div>
   );
