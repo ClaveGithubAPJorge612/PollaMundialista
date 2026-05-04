@@ -244,9 +244,9 @@ export default function MyPreds() {
               .sort((a, b) => new Date(a.kickoff) - new Date(b.kickoff))
               .map(m => (
                 <PredRow
-                  key={m.id}
+                  key={m.matchId}
                   match={m}
-                  pred={predMap[m.id]}
+                  pred={predMap[m.matchId]}
                   onSave={handleSave}
                   saving={saving}
                 />
