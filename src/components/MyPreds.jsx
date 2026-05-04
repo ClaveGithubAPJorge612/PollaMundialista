@@ -41,7 +41,7 @@ function PredRow({ match, pred, onSave, saving }) {
     if (isNaN(h) || isNaN(a)) { setLocalErr('Ingresa ambos marcadores.'); return; }
     if (h < 0 || a < 0)       { setLocalErr('Los goles no pueden ser negativos.'); return; }
     try {
-      await onSave(match.id, h, a);
+      await onSave(match.matchId, h, a);
       setDirty(false);
       setSaved(true);
       setTimeout(() => setSaved(false), 2500);
@@ -57,7 +57,7 @@ function PredRow({ match, pred, onSave, saving }) {
   return (
     <div className={`pred-row ${isFinished ? 'pred-finished' : ''} ${isLocked && !isFinished ? 'pred-locked' : ''}`}>
       <div className="pred-meta">
-        <span className="badge badge-purple" style={{ fontSize: '0.65rem' }}>Grupo {match.group} · J{match.matchday}</span>
+        <span className="badge badge-titles" style={{ fontSize: '0.65rem' }}>Grupo {match.group}{match.matchday}</span>
         <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>{kickoffStr}</span>
         {isLocked && <span className="badge" style={{ fontSize: '0.65rem', background: 'rgba(255,80,80,0.1)', color: '#ff9999', border: '1px solid rgba(255,80,80,0.2)' }}>🔒 Cerrado</span>}
       </div>
