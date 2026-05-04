@@ -1,0 +1,15 @@
+{
+  "polla-users": 
+    {
+        "PutRequest": {
+            "Item": {
+                "userId": {
+                    "S": "user1"
+                },
+                "userName": {
+                    "S": "Alfonso"
+                }
+            }
+        }
+    }
+}

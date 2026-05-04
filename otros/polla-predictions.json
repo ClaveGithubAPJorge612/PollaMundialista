@@ -1,0 +1,23 @@
+{
+  "polla-predictions": 
+    {
+        "userId": {
+            "S": "7428d498-7091-705b-d4bb-2f38f5cf4ec9"
+        },
+        "matchId": {
+            "S": "m1"
+        },
+        "awayGoals": {
+            "N": "1"
+        },
+        "createdAt": {
+            "S": "2026-05-04T17:10:45.917Z"
+        },
+        "homeGoals": {
+            "N": "3"
+        },
+        "points": {
+            "NULL": true
+        }
+    }
+}

@@ -6,6 +6,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { getMatches, getUserPredictions, savePrediction } from '../services/dynamodb';
 import { useAuth } from '../hooks/useAuth';
+import { FlagIcon } from '../utils/flagUtils';
 
 /* ── Point badge ── */
 function PointsBadge({ pts }) {
@@ -65,7 +66,7 @@ function PredRow({ match, pred, onSave, saving }) {
       <div className="pred-body">
         {/* Teams + score inputs */}
         <div className="pred-teams">
-          <span className="pred-team">{match.homeTeam.flag} {match.homeTeam.name}</span>
+          <span className="pred-team"><FlagIcon teamId={match.homeTeam.id} size="1rem" /> {match.homeTeam.name}</span>
 
           <div className="pred-score-area">
             {isLocked ? (
@@ -104,7 +105,7 @@ function PredRow({ match, pred, onSave, saving }) {
             )}
           </div>
 
-          <span className="pred-team" style={{ textAlign: 'right' }}>{match.awayTeam.name} {match.awayTeam.flag}</span>
+          <span className="pred-team" style={{ textAlign: 'right' }}>{match.awayTeam.name} <FlagIcon teamId={match.awayTeam.id} size="1rem" /></span>
         </div>
 
         {/* Actions + badges */}
@@ -170,7 +171,7 @@ export default function MyPreds() {
     }
   }, [user.id]);
 
-  const predMap = Object.fromEntries(preds.map(p => [p.matchId, p]));
+  const predMap = Object.fromEntries(preds.map(p => [p.matchId, p])); // matchId es el id del match
 
   const filteredMatches = matches.filter(m => {
     if (filter === 'open')     return m.status === 'upcoming';

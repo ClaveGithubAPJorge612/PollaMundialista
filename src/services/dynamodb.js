@@ -14,7 +14,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 
 import {
-  MATCHES, PREDICTIONS, STANDINGS, MOCK_USERS, calculatePoints,
+  MATCHES, PREDICTIONS, STANDINGS, MOCK_USERS, MOCK_TEAMS, calculatePoints,
 } from '../data/mockData';
 
 const IS_DEV = import.meta.env.VITE_ENV === 'development';
@@ -23,10 +23,24 @@ const IS_DEV = import.meta.env.VITE_ENV === 'development';
    DEV LAYER  –  in-memory store backed by mockData.js
 ═══════════════════════════════════════════════════════════ */
 
-// Mutable copy so predictions can be saved in dev without refreshing
-const _matches     = [...MATCHES];
-const _predictions = [...PREDICTIONS];
+// Mutable copies for dev environment with localStorage persistence
+const _initMatches = () => {
+  const stored = localStorage.getItem('dev_matches');
+  return stored ? JSON.parse(stored) : [...MATCHES];
+};
+
+const _initPredictions = () => {
+  const stored = localStorage.getItem('dev_predictions');
+  return stored ? JSON.parse(stored) : [];
+};
+
+const _matches     = _initMatches();
+const _predictions = _initPredictions();
 const _users       = [...MOCK_USERS];
+const _teams       = [...MOCK_TEAMS];
+
+const _saveMatches = () => localStorage.setItem('dev_matches', JSON.stringify(_matches));
+const _savePredictions = () => localStorage.setItem('dev_predictions', JSON.stringify(_predictions));
 
 const delay = (ms = 300) => new Promise(r => setTimeout(r, ms));
 
@@ -42,7 +56,59 @@ const devDB = {
 
   async getMatchById(matchId) {
     await delay(100);
-    return _matches.find(m => m.id === matchId) ?? null;
+    return _matches.find(m => m.matchId === matchId) ?? null;
+  },
+
+  /* ── Match Admin Ops ── */
+  async getMatchPredictions(matchId) {
+    await delay();
+    return _predictions.filter(p => p.matchId === matchId);
+  },
+
+  async updateMatch(matchId, updates) {
+    await delay(400);
+    const idx = _matches.findIndex(m => m.matchId === matchId);
+    if (idx === -1) throw new Error('Partido no encontrado');
+    _matches[idx] = { ..._matches[idx], ...updates };
+    _saveMatches();
+    return _matches[idx];
+  },
+
+  async updatePredictionPoints(userId, matchId, points, pointLabel) {
+    await delay(300);
+    const idx = _predictions.findIndex(p => p.userId === userId && p.matchId === matchId);
+    if (idx === -1) throw new Error('Predicción no encontrada');
+    _predictions[idx] = { ..._predictions[idx], points, pointLabel };
+    _savePredictions();
+    return _predictions[idx];
+  },
+
+  /* ── Teams ── */
+  async getTeams() {
+    await delay();
+    return [..._teams];
+  },
+
+  async updateTeamGroup(teamId, group) {
+    await delay(300);
+    const idx = _teams.findIndex(t => t.teamId === teamId);
+    if (idx === -1) throw new Error('Equipo no encontrado');
+    _teams[idx] = { ..._teams[idx], group };
+    return _teams[idx];
+  },
+
+  /* ── User Stats ── */
+  async getAllUsers() {
+    await delay();
+    return [..._users];
+  },
+
+  async updateUserStatsAfterRecalc(userId, stats) {
+    await delay(300);
+    const idx = _users.findIndex(u => u.id === userId);
+    if (idx === -1) throw new Error('Usuario no encontrado');
+    _users[idx] = { ..._users[idx], ...stats };
+    return _users[idx];
   },
 
   /* ── Users ── */
@@ -86,7 +152,7 @@ const devDB = {
 
   async savePrediction(userId, matchId, homeGoals, awayGoals) {
     await delay(400);
-    const match = _matches.find(m => m.id === matchId);
+    const match = _matches.find(m => m.matchId === matchId);
     if (!match) throw new Error('Partido no encontrado');
 
     // Check if locked (past kickoff)
@@ -107,6 +173,7 @@ const devDB = {
     if (existing >= 0) _predictions[existing] = pred;
     else               _predictions.push(pred);
 
+    _savePredictions();
     return pred;
   },
 };
@@ -152,6 +219,11 @@ const TABLES = {
   PREDICTIONS: import.meta.env.VITE_DYNAMO_PREDICTIONS_TABLE || 'polla-predictions',
 };
 
+const TABLES_PROD = {
+  ...TABLES,
+  TEAMS: import.meta.env.VITE_DYNAMO_TEAMS_TABLE || 'polla-teams',
+};
+
 const prodDB = {
   async getMatches({ phase, group } = {}) {
     const { ScanCommand, QueryCommand } = await import('@aws-sdk/lib-dynamodb');
@@ -169,6 +241,46 @@ const prodDB = {
     const client = await getDocClient();
     const { Item } = await client.send(new GetCommand({ TableName: TABLES.MATCHES, Key: { matchId } }));
     return Item ?? null;
+  },
+
+  async getMatchPredictions(matchId) {
+    const { ScanCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    const { Items } = await client.send(new ScanCommand({
+      TableName: TABLES.PREDICTIONS,
+      FilterExpression: 'matchId = :mid',
+      ExpressionAttributeValues: { ':mid': matchId },
+    }));
+    return Items ?? [];
+  },
+
+  async updateMatch(matchId, updates) {
+    const { UpdateCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    const keys = Object.keys(updates);
+    const expr = keys.map((k, i) => `#f${i} = :v${i}`).join(', ');
+    const names = Object.fromEntries(keys.map((k, i) => [`#f${i}`, k]));
+    const vals  = Object.fromEntries(keys.map((k, i) => [`:v${i}`, updates[k]]));
+    await client.send(new UpdateCommand({
+      TableName: TABLES.MATCHES,
+      Key: { matchId },
+      UpdateExpression: `SET ${expr}`,
+      ExpressionAttributeNames: names,
+      ExpressionAttributeValues: vals,
+    }));
+    return { matchId, ...updates };
+  },
+
+  async updatePredictionPoints(userId, matchId, points, pointLabel) {
+    const { UpdateCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    await client.send(new UpdateCommand({
+      TableName: TABLES.PREDICTIONS,
+      Key: { userId, matchId },
+      UpdateExpression: 'SET points = :pts, pointLabel = :lbl',
+      ExpressionAttributeValues: { ':pts': points, ':lbl': pointLabel },
+    }));
+    return { userId, matchId, points, pointLabel };
   },
 
   async getStandings() {
@@ -230,6 +342,50 @@ const prodDB = {
     await client.send(new PutCommand({ TableName: TABLES.PREDICTIONS, Item: pred }));
     return pred;
   },
+
+  async getTeams() {
+    const { ScanCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    const { Items } = await client.send(new ScanCommand({ TableName: TABLES_PROD.TEAMS }));
+    return Items ?? [];
+  },
+
+  async updateTeamGroup(teamId, group) {
+    const { UpdateCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    await client.send(new UpdateCommand({
+      TableName: TABLES_PROD.TEAMS,
+      Key: { teamId },
+      UpdateExpression: 'SET #g = :grp',
+      ExpressionAttributeNames: { '#g': 'group' },
+      ExpressionAttributeValues: { ':grp': group },
+    }));
+    return { teamId, group };
+  },
+
+  async getAllUsers() {
+    const { ScanCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    const { Items } = await client.send(new ScanCommand({ TableName: TABLES.USERS }));
+    return Items ?? [];
+  },
+
+  async updateUserStatsAfterRecalc(userId, stats) {
+    const { UpdateCommand } = await import('@aws-sdk/lib-dynamodb');
+    const client = await getDocClient();
+    const keys = Object.keys(stats);
+    const expr = keys.map((k, i) => `#f${i} = :v${i}`).join(', ');
+    const names = Object.fromEntries(keys.map((k, i) => [`#f${i}`, k]));
+    const vals  = Object.fromEntries(keys.map((k, i) => [`:v${i}`, stats[k]]));
+    await client.send(new UpdateCommand({
+      TableName: TABLES.USERS,
+      Key: { userId },
+      UpdateExpression: `SET ${expr}`,
+      ExpressionAttributeNames: names,
+      ExpressionAttributeValues: vals,
+    }));
+    return { userId, ...stats };
+  },
 };
 
 /* ═══════════════════════════════════════════════════════════
@@ -238,10 +394,17 @@ const prodDB = {
 
 const db = IS_DEV ? devDB : prodDB;
 
-export const getMatches         = (...args) => db.getMatches(...args);
-export const getMatchById       = (...args) => db.getMatchById(...args);
-export const getStandings       = ()        => db.getStandings();
-export const getUserById        = (...args) => db.getUserById(...args);
-export const updateUserProfile  = (...args) => db.updateUserProfile(...args);
-export const getUserPredictions = (...args) => db.getUserPredictions(...args);
-export const savePrediction     = (...args) => db.savePrediction(...args);
+export const getMatches            = (...args) => db.getMatches(...args);
+export const getMatchById          = (...args) => db.getMatchById(...args);
+export const getMatchPredictions   = (...args) => db.getMatchPredictions(...args);
+export const updateMatch           = (...args) => db.updateMatch(...args);
+export const updatePredictionPoints = (...args) => db.updatePredictionPoints(...args);
+export const getStandings          = ()        => db.getStandings();
+export const getUserById           = (...args) => db.getUserById(...args);
+export const updateUserProfile     = (...args) => db.updateUserProfile(...args);
+export const getUserPredictions    = (...args) => db.getUserPredictions(...args);
+export const savePrediction        = (...args) => db.savePrediction(...args);
+export const getTeams             = (...args) => db.getTeams(...args);
+export const updateTeamGroup       = (...args) => db.updateTeamGroup(...args);
+export const getAllUsers          = (...args) => db.getAllUsers(...args);
+export const updateUserStatsAfterRecalc = (...args) => db.updateUserStatsAfterRecalc(...args);

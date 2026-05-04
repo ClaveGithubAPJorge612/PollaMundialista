@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import logoFifa from '../assets/images/Logofifa26.png';
 
-const TABS = [
+const BASE_TABS = [
   { id: 'dashboard', label: 'Inicio',      icon: '🏠' },
   { id: 'calendar',  label: 'Calendario',  icon: '📅' },
   { id: 'mundial',   label: 'Mundial',     icon: '🏆' },
@@ -18,7 +18,8 @@ const TABS = [
 ];
 
 export default function Navbar({ activeTab, onTabChange }) {
-  const { user, logout } = useAuth();
+  const { user, logout, isAdmin } = useAuth();
+  const TABS = [...BASE_TABS, ...(isAdmin ? [{ id: 'admin', label: 'Admin', icon: '🛡' }] : [])];
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

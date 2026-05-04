@@ -13,6 +13,7 @@ import MyPreds     from './components/MyPreds';
 import Calendar    from './components/Calendar';
 import Mundial     from './components/Mundial';
 import MyProfile   from './components/MyProfile';
+import AdminPanel  from './components/AdminPanel';
 
 const COMPONENTS = {
   dashboard: Dashboard,
@@ -20,6 +21,7 @@ const COMPONENTS = {
   calendar:  Calendar,
   mundial:   Mundial,
   myprofile: MyProfile,
+  admin:     AdminPanel,
 };
 
 export default function App() {

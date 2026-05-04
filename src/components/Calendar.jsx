@@ -7,6 +7,7 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { getMatches } from '../services/dynamodb';
 import { STADIUMS } from '../data/mockData';
+import { FlagIcon } from '../utils/flagUtils';
 
 const PHASE_LABELS = {
   group: 'Fase de Grupos',
@@ -58,7 +59,7 @@ function MatchCard({ match, onClick }) {
         ) : (
           <div className="cmc-teams">
             <div className="cmc-team-home">
-              <span className="cmc-flag">{match.homeTeam?.flag}</span>
+              <span className="cmc-flag"><FlagIcon teamId={match.homeTeam?.id} size="1rem" /></span>
               <span className="cmc-name">{match.homeTeam?.name}</span>
             </div>
 
@@ -77,7 +78,7 @@ function MatchCard({ match, onClick }) {
 
             <div className="cmc-team-away">
               <span className="cmc-name">{match.awayTeam?.name}</span>
-              <span className="cmc-flag">{match.awayTeam?.flag}</span>
+              <span className="cmc-flag"><FlagIcon teamId={match.awayTeam?.id} size="1rem" /></span>
             </div>
           </div>
         )}
@@ -127,7 +128,7 @@ function MatchModal({ match, onClose }) {
         {!isTBD ? (
           <div className="modal-teams">
             <div className="modal-team">
-              <span className="modal-flag">{match.homeTeam?.flag}</span>
+              <span className="modal-flag"><FlagIcon teamId={match.homeTeam?.id} size="1rem" /></span>
               <span className="bangers modal-team-name">{match.homeTeam?.name}</span>
             </div>
 
@@ -147,7 +148,7 @@ function MatchModal({ match, onClose }) {
 
             <div className="modal-team modal-team-away">
               <span className="bangers modal-team-name">{match.awayTeam?.name}</span>
-              <span className="modal-flag">{match.awayTeam?.flag}</span>
+              <span className="modal-flag"><FlagIcon teamId={match.awayTeam?.id} size="1rem" /></span>
             </div>
           </div>
         ) : (
@@ -391,7 +392,7 @@ export default function Calendar() {
             </div>
             <div className="cal-day-matches">
               {dayMatches.map(m => (
-                <MatchCard key={m.id} match={m} onClick={openModal} />
+                <MatchCard key={m.matchId} match={m} onClick={openModal} />
               ))}
             </div>
           </div>

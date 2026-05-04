@@ -6,6 +6,7 @@
 
 import { useState, useEffect, useCallback, createContext, useContext } from 'react';
 import { getCurrentUser, signIn, signUp, confirmSignUp, signOut, changePassword } from '../services/auth';
+import { getUserById } from '../services/dynamodb';
 
 const AuthContext = createContext(null);
 
@@ -19,7 +20,8 @@ export function AuthProvider({ children }) {
     (async () => {
       try {
         const u = await getCurrentUser();
-        setUser(u);
+        const dbUser = await getUserById(u.id);
+        setUser({ ...u, role: dbUser?.role ?? 'user' });
       } catch {
         setUser(null);
       } finally {
@@ -33,7 +35,8 @@ export function AuthProvider({ children }) {
     setLoading(true);
     try {
       const u = await signIn(email, password);
-      setUser(u);
+      const dbUser = await getUserById(u.id);
+      setUser({ ...u, role: dbUser?.role ?? 'user' });
       return { success: true };
     } catch (err) {
       setError(err.message);
@@ -86,8 +89,10 @@ export function AuthProvider({ children }) {
 
   const clearError = useCallback(() => setError(null), []);
 
+  const isAdmin = user?.role === 'admin';
+
   return (
-    <AuthContext.Provider value={{ user, loading, error, login, register, confirm, logout, updatePassword, clearError, setUser }}>
+    <AuthContext.Provider value={{ user, isAdmin, loading, error, login, register, confirm, logout, updatePassword, clearError, setUser }}>
       {children}
     </AuthContext.Provider>
   );

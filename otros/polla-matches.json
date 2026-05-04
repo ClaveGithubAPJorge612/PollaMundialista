@@ -1,0 +1,52 @@
+{
+  "polla-matches": 
+    {
+        "matchId": {
+            "S": "m6"
+        },
+        "awayTeam": {
+            "M": {
+            "flag": {
+                "S": "🇲🇦"
+            },
+            "name": {
+                "S": "Marruecos"
+            }
+            }
+        },
+        "city": {
+            "S": "New York NJ"
+        },
+        "date": {
+            "S": "2026-06-13"
+        },
+        "group": {
+            "S": "C"
+        },
+        "homeTeam": {
+            "M": {
+            "flag": {
+                "S": "🇧🇷"
+            },
+            "name": {
+                "S": "Brasil"
+            }
+            }
+        },
+        "kickoff": {
+            "S": "2026-06-13T18:00:00Z"
+        },
+        "phase": {
+            "S": "group"
+        },
+        "stadium": {
+            "S": "MetLife Stadium"
+        },
+        "status": {
+            "S": "upcoming"
+        },
+        "tbd": {
+            "BOOL": false
+        }
+    }
+}

@@ -22,6 +22,7 @@ export const STADIUMS = [
   { id: 'azteca',     name: 'Estadio Azteca',              city: 'Ciudad de México',     country: 'México', capacity: 83_357 },
   { id: 'akron',      name: 'Estadio Akron',               city: 'Guadalajara',          country: 'México', capacity: 49_850 },
   { id: 'bbva',       name: 'Estadio BBVA',                city: 'Monterrey',            country: 'México', capacity: 51_348 },
+  { id: 'atlanta',    name: 'Mercedes-Benz Stadium',       city: 'Atlanta, GA',          country: 'USA',    capacity: 71_000 },
 ];
 
 const S = STADIUMS;
@@ -29,84 +30,85 @@ const st = (id) => STADIUMS.find(s => s.id === id);
 
 // ── Teams ─────────────────────────────────────────────────────────────────────
 // group: group letter A–L
+// teamIds match ISO 3166-1 alpha-3 codes from DynamoDB polla-teams table
 export const TEAMS = {
   // Group A
-  usa:        { id: 'usa',        name: 'Estados Unidos', flag: '🇺🇸', group: 'A' },
-  mexico:     { id: 'mexico',     name: 'México',         flag: '🇲🇽', group: 'A' },
-  canada:     { id: 'canada',     name: 'Canadá',         flag: '🇨🇦', group: 'A' },
-  honduras:   { id: 'honduras',   name: 'Honduras',       flag: '🇭🇳', group: 'A' },
+  mex: { id: 'mex', name: 'México', flag: '🇲🇽', group: 'A' },
+  rsa: { id: 'rsa', name: 'Sudáfrica', flag: '🇿🇦', group: 'A' },
+  kor: { id: 'kor', name: 'Corea del Sur', flag: '🇰🇷', group: 'A' },
+  cze: { id: 'cze', name: 'República Checa', flag: '🇨🇿', group: 'A' },
   // Group B
-  brazil:     { id: 'brazil',     name: 'Brasil',         flag: '🇧🇷', group: 'B' },
-  colombia:   { id: 'colombia',   name: 'Colombia',       flag: '🇨🇴', group: 'B' },
-  uruguay:    { id: 'uruguay',    name: 'Uruguay',        flag: '🇺🇾', group: 'B' },
-  ecuador:    { id: 'ecuador',    name: 'Ecuador',        flag: '🇪🇨', group: 'B' },
+  can: { id: 'can', name: 'Canadá', flag: '🇨🇦', group: 'B' },
+  bih: { id: 'bih', name: 'Bosnia y Herzegovina', flag: '🇧🇦', group: 'B' },
+  qat: { id: 'qat', name: 'Catar', flag: '🇶🇦', group: 'B' },
+  sui: { id: 'sui', name: 'Suiza', flag: '🇨🇭', group: 'B' },
   // Group C
-  argentina:  { id: 'argentina',  name: 'Argentina',      flag: '🇦🇷', group: 'C' },
-  chile:      { id: 'chile',      name: 'Chile',          flag: '🇨🇱', group: 'C' },
-  peru:       { id: 'peru',       name: 'Perú',           flag: '🇵🇪', group: 'C' },
-  bolivia:    { id: 'bolivia',    name: 'Bolivia',        flag: '🇧🇴', group: 'C' },
+  bra: { id: 'bra', name: 'Brasil', flag: '🇧🇷', group: 'C' },
+  mar: { id: 'mar', name: 'Marruecos', flag: '🇲🇦', group: 'C' },
+  hai: { id: 'hai', name: 'Haití', flag: '🇭🇹', group: 'C' },
+  sco: { id: 'sco', name: 'Escocia', flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', group: 'C' },
   // Group D
-  france:     { id: 'france',     name: 'Francia',        flag: '🇫🇷', group: 'D' },
-  morocco:    { id: 'morocco',    name: 'Marruecos',      flag: '🇲🇦', group: 'D' },
-  senegal:    { id: 'senegal',    name: 'Senegal',        flag: '🇸🇳', group: 'D' },
-  algeria:    { id: 'algeria',    name: 'Argelia',        flag: '🇩🇿', group: 'D' },
+  usa: { id: 'usa', name: 'Estados Unidos', flag: '🇺🇸', group: 'D' },
+  par: { id: 'par', name: 'Paraguay', flag: '🇵🇾', group: 'D' },
+  aus: { id: 'aus', name: 'Australia', flag: '🇦🇺', group: 'D' },
+  tur: { id: 'tur', name: 'Turquía', flag: '🇹🇷', group: 'D' },
   // Group E
-  spain:      { id: 'spain',      name: 'España',         flag: '🇪🇸', group: 'E' },
-  germany:    { id: 'germany',    name: 'Alemania',       flag: '🇩🇪', group: 'E' },
-  croatia:    { id: 'croatia',    name: 'Croacia',        flag: '🇭🇷', group: 'E' },
-  austria:    { id: 'austria',    name: 'Austria',        flag: '🇦🇹', group: 'E' },
+  ger: { id: 'ger', name: 'Alemania', flag: '🇩🇪', group: 'E' },
+  cuw: { id: 'cuw', name: 'Curaçao', flag: '🇨🇼', group: 'E' },
+  civ: { id: 'civ', name: 'Costa de Marfil', flag: '🇨🇮', group: 'E' },
+  ecu: { id: 'ecu', name: 'Ecuador', flag: '🇪🇨', group: 'E' },
   // Group F
-  england:    { id: 'england',    name: 'Inglaterra',     flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', group: 'F' },
-  netherlands:{ id: 'netherlands',name: 'Países Bajos',   flag: '🇳🇱', group: 'F' },
-  belgium:    { id: 'belgium',    name: 'Bélgica',        flag: '🇧🇪', group: 'F' },
-  denmark:    { id: 'denmark',    name: 'Dinamarca',      flag: '🇩🇰', group: 'F' },
+  ned: { id: 'ned', name: 'Países Bajos', flag: '🇳🇱', group: 'F' },
+  jpn: { id: 'jpn', name: 'Japón', flag: '🇯🇵', group: 'F' },
+  swe: { id: 'swe', name: 'Suecia', flag: '🇸🇪', group: 'F' },
+  tun: { id: 'tun', name: 'Túnez', flag: '🇹🇳', group: 'F' },
   // Group G
-  portugal:   { id: 'portugal',   name: 'Portugal',       flag: '🇵🇹', group: 'G' },
-  poland:     { id: 'poland',     name: 'Polonia',        flag: '🇵🇱', group: 'G' },
-  ukraine:    { id: 'ukraine',    name: 'Ucrania',        flag: '🇺🇦', group: 'G' },
-  turkey:     { id: 'turkey',     name: 'Turquía',        flag: '🇹🇷', group: 'G' },
+  bel: { id: 'bel', name: 'Bélgica', flag: '🇧🇪', group: 'G' },
+  egy: { id: 'egy', name: 'Egipto', flag: '🇪🇬', group: 'G' },
+  irn: { id: 'irn', name: 'Irán', flag: '🇮🇷', group: 'G' },
+  nzl: { id: 'nzl', name: 'Nueva Zelanda', flag: '🇳🇿', group: 'G' },
   // Group H
-  italy:      { id: 'italy',      name: 'Italia',         flag: '🇮🇹', group: 'H' },
-  serbia:     { id: 'serbia',     name: 'Serbia',         flag: '🇷🇸', group: 'H' },
-  czechia:    { id: 'czechia',    name: 'Chequia',        flag: '🇨🇿', group: 'H' },
-  slovakia:   { id: 'slovakia',   name: 'Eslovaquia',     flag: '🇸🇰', group: 'H' },
+  esp: { id: 'esp', name: 'España', flag: '🇪🇸', group: 'H' },
+  cpv: { id: 'cpv', name: 'Cabo Verde', flag: '🇨🇻', group: 'H' },
+  ksa: { id: 'ksa', name: 'Arabia Saudita', flag: '🇸🇦', group: 'H' },
+  uru: { id: 'uru', name: 'Uruguay', flag: '🇺🇾', group: 'H' },
   // Group I
-  japan:      { id: 'japan',      name: 'Japón',          flag: '🇯🇵', group: 'I' },
-  southkorea: { id: 'southkorea', name: 'Corea del Sur',  flag: '🇰🇷', group: 'I' },
-  australia:  { id: 'australia',  name: 'Australia',      flag: '🇦🇺', group: 'I' },
-  saudiarabia:{ id: 'saudiarabia',name: 'Arabia Saudita', flag: '🇸🇦', group: 'I' },
+  fra: { id: 'fra', name: 'Francia', flag: '🇫🇷', group: 'I' },
+  sen: { id: 'sen', name: 'Senegal', flag: '🇸🇳', group: 'I' },
+  irq: { id: 'irq', name: 'Irak', flag: '🇮🇶', group: 'I' },
+  nor: { id: 'nor', name: 'Noruega', flag: '🇳🇴', group: 'I' },
   // Group J
-  iran:       { id: 'iran',       name: 'Irán',           flag: '🇮🇷', group: 'J' },
-  qatar:      { id: 'qatar',      name: 'Qatar',          flag: '🇶🇦', group: 'J' },
-  egypt:      { id: 'egypt',      name: 'Egipto',         flag: '🇪🇬', group: 'J' },
-  nigeria:    { id: 'nigeria',    name: 'Nigeria',        flag: '🇳🇬', group: 'J' },
+  arg: { id: 'arg', name: 'Argentina', flag: '🇦🇷', group: 'J' },
+  alg: { id: 'alg', name: 'Argelia', flag: '🇩🇿', group: 'J' },
+  aut: { id: 'aut', name: 'Austria', flag: '🇦🇹', group: 'J' },
+  jor: { id: 'jor', name: 'Jordania', flag: '🇯🇴', group: 'J' },
   // Group K
-  cameroon:   { id: 'cameroon',   name: 'Camerún',        flag: '🇨🇲', group: 'K' },
-  ghana:      { id: 'ghana',      name: 'Ghana',          flag: '🇬🇭', group: 'K' },
-  mali:       { id: 'mali',       name: 'Mali',           flag: '🇲🇱', group: 'K' },
-  tunisia:    { id: 'tunisia',    name: 'Túnez',          flag: '🇹🇳', group: 'K' },
+  por: { id: 'por', name: 'Portugal', flag: '🇵🇹', group: 'K' },
+  cod: { id: 'cod', name: 'República del Congo', flag: '🇨🇩', group: 'K' },
+  uzb: { id: 'uzb', name: 'Uzbekistán', flag: '🇺🇿', group: 'K' },
+  col: { id: 'col', name: 'Colombia', flag: '🇨🇴', group: 'K' },
   // Group L
-  costarica:  { id: 'costarica',  name: 'Costa Rica',     flag: '🇨🇷', group: 'L' },
-  panama:     { id: 'panama',     name: 'Panamá',         flag: '🇵🇦', group: 'L' },
-  jamaica:    { id: 'jamaica',    name: 'Jamaica',        flag: '🇯🇲', group: 'L' },
-  elsalvador: { id: 'elsalvador', name: 'El Salvador',    flag: '🇸🇻', group: 'L' },
+  eng: { id: 'eng', name: 'Inglaterra', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', group: 'L' },
+  cro: { id: 'cro', name: 'Croacia', flag: '🇭🇷', group: 'L' },
+  gha: { id: 'gha', name: 'Ghana', flag: '🇬🇭', group: 'L' },
+  pan: { id: 'pan', name: 'Panamá', flag: '🇵🇦', group: 'L' },
 };
 
 // ── Group definitions ─────────────────────────────────────────────────────────
 // Each group: [T1, T2, T3, T4]  (matchday order)
 const GROUP_DEF = {
-  A: ['usa', 'mexico', 'canada', 'honduras'],
-  B: ['brazil', 'colombia', 'uruguay', 'ecuador'],
-  C: ['argentina', 'chile', 'peru', 'bolivia'],
-  D: ['france', 'morocco', 'senegal', 'algeria'],
-  E: ['spain', 'germany', 'croatia', 'austria'],
-  F: ['england', 'netherlands', 'belgium', 'denmark'],
-  G: ['portugal', 'poland', 'ukraine', 'turkey'],
-  H: ['italy', 'serbia', 'czechia', 'slovakia'],
-  I: ['japan', 'southkorea', 'australia', 'saudiarabia'],
-  J: ['iran', 'qatar', 'egypt', 'nigeria'],
-  K: ['cameroon', 'ghana', 'mali', 'tunisia'],
-  L: ['costarica', 'panama', 'jamaica', 'elsalvador'],
+  A: ['mex', 'rsa', 'kor', 'cze'],
+  B: ['can', 'bih', 'qat', 'sui'],
+  C: ['bra', 'mar', 'hai', 'sco'],
+  D: ['usa', 'par', 'aus', 'tur'],
+  E: ['ger', 'cuw', 'civ', 'ecu'],
+  F: ['ned', 'jpn', 'swe', 'tun'],
+  G: ['bel', 'egy', 'irn', 'nzl'],
+  H: ['esp', 'cpv', 'ksa', 'uru'],
+  I: ['fra', 'sen', 'irq', 'nor'],
+  J: ['arg', 'alg', 'aut', 'jor'],
+  K: ['por', 'cod', 'uzb', 'col'],
+  L: ['eng', 'cro', 'gha', 'pan'],
 };
 
 // ── Match results for completed games ────────────────────────────────────────
@@ -168,173 +170,174 @@ const RESULTS = {
 
 // ── Match schedule skeleton ────────────────────────────────────────────────────
 // Dates / times / stadiums (spread across the tournament calendar)
+// Based on official FIFA World Cup 2026 schedule
 const SCHEDULE = {
   A: {
     MD1: [
-      { date: '2026-06-11', time: '18:00', stadium: 'azteca'  },
-      { date: '2026-06-11', time: '21:00', stadium: 'bcplace' },
+      { date: '2026-06-11', time: '15:00', stadium: 'azteca'  },
+      { date: '2026-06-11', time: '22:00', stadium: 'akron'   },
     ],
     MD2: [
-      { date: '2026-06-16', time: '15:00', stadium: 'bmo'    },
-      { date: '2026-06-16', time: '18:00', stadium: 'azteca' },
+      { date: '2026-06-18', time: '12:00', stadium: 'atlanta' },
+      { date: '2026-06-18', time: '21:00', stadium: 'akron'   },
     ],
     MD3: [
-      { date: '2026-06-21', time: '20:00', stadium: 'azteca'  },
-      { date: '2026-06-21', time: '20:00', stadium: 'bcplace' },
+      { date: '2026-06-24', time: '21:00', stadium: 'azteca'  },
+      { date: '2026-06-24', time: '21:00', stadium: 'akron'   },
     ],
   },
   B: {
     MD1: [
-      { date: '2026-06-12', time: '15:00', stadium: 'metlife'  },
-      { date: '2026-06-12', time: '18:00', stadium: 'hardrock' },
+      { date: '2026-06-12', time: '15:00', stadium: 'bmo'      },
+      { date: '2026-06-13', time: '15:00', stadium: 'levis'    },
     ],
     MD2: [
-      { date: '2026-06-17', time: '12:00', stadium: 'nrg'    },
-      { date: '2026-06-17', time: '15:00', stadium: 'metlife' },
+      { date: '2026-06-18', time: '15:00', stadium: 'sofi'     },
+      { date: '2026-06-18', time: '18:00', stadium: 'bcplace'  },
     ],
     MD3: [
-      { date: '2026-06-22', time: '20:00', stadium: 'metlife'  },
-      { date: '2026-06-22', time: '20:00', stadium: 'hardrock' },
+      { date: '2026-06-24', time: '15:00', stadium: 'bcplace'  },
+      { date: '2026-06-24', time: '15:00', stadium: 'lumen'    },
     ],
   },
   C: {
     MD1: [
-      { date: '2026-06-12', time: '21:00', stadium: 'atandt'   },
-      { date: '2026-06-13', time: '12:00', stadium: 'sofi'     },
+      { date: '2026-06-13', time: '18:00', stadium: 'metlife'  },
+      { date: '2026-06-13', time: '21:00', stadium: 'gillette' },
     ],
     MD2: [
-      { date: '2026-06-17', time: '18:00', stadium: 'atandt'  },
-      { date: '2026-06-17', time: '21:00', stadium: 'sofi'    },
+      { date: '2026-06-19', time: '18:00', stadium: 'gillette' },
+      { date: '2026-06-19', time: '21:00', stadium: 'lincoln'  },
     ],
     MD3: [
-      { date: '2026-06-22', time: '20:00', stadium: 'atandt'  },
-      { date: '2026-06-22', time: '20:00', stadium: 'sofi'    },
+      { date: '2026-06-24', time: '18:00', stadium: 'hardrock' },
+      { date: '2026-06-24', time: '18:00', stadium: 'atlanta'  },
     ],
   },
   D: {
     MD1: [
-      { date: '2026-06-13', time: '15:00', stadium: 'levis'    },
-      { date: '2026-06-13', time: '18:00', stadium: 'lincoln'  },
+      { date: '2026-06-12', time: '21:00', stadium: 'sofi'     },
+      { date: '2026-06-13', time: '00:00', stadium: 'bcplace'  },
     ],
     MD2: [
-      { date: '2026-06-18', time: '12:00', stadium: 'levis'   },
-      { date: '2026-06-18', time: '15:00', stadium: 'lincoln' },
+      { date: '2026-06-19', time: '15:00', stadium: 'lumen'    },
+      { date: '2026-06-19', time: '00:00', stadium: 'bcplace'  },
     ],
     MD3: [
-      { date: '2026-06-23', time: '20:00', stadium: 'levis'   },
-      { date: '2026-06-23', time: '20:00', stadium: 'lincoln' },
+      { date: '2026-06-25', time: '22:00', stadium: 'sofi'     },
+      { date: '2026-06-25', time: '22:00', stadium: 'bcplace'  },
     ],
   },
   E: {
     MD1: [
-      { date: '2026-06-13', time: '21:00', stadium: 'arrowhead' },
-      { date: '2026-06-14', time: '12:00', stadium: 'empower'   },
+      { date: '2026-06-14', time: '13:00', stadium: 'nrg'      },
+      { date: '2026-06-14', time: '19:00', stadium: 'lincoln'  },
     ],
     MD2: [
-      { date: '2026-06-18', time: '18:00', stadium: 'arrowhead' },
-      { date: '2026-06-18', time: '21:00', stadium: 'empower'   },
+      { date: '2026-06-20', time: '16:00', stadium: 'bmo'      },
+      { date: '2026-06-20', time: '22:00', stadium: 'arrowhead'},
     ],
     MD3: [
-      { date: '2026-06-23', time: '20:00', stadium: 'arrowhead' },
-      { date: '2026-06-23', time: '20:00', stadium: 'empower'   },
+      { date: '2026-06-25', time: '16:00', stadium: 'lincoln'  },
+      { date: '2026-06-25', time: '16:00', stadium: 'metlife'  },
     ],
   },
   F: {
     MD1: [
-      { date: '2026-06-14', time: '15:00', stadium: 'gillette' },
-      { date: '2026-06-14', time: '18:00', stadium: 'lumen'    },
+      { date: '2026-06-14', time: '16:00', stadium: 'atandt'   },
+      { date: '2026-06-14', time: '22:00', stadium: 'bbva'     },
     ],
     MD2: [
-      { date: '2026-06-19', time: '12:00', stadium: 'gillette' },
-      { date: '2026-06-19', time: '15:00', stadium: 'lumen'    },
+      { date: '2026-06-20', time: '13:00', stadium: 'nrg'      },
+      { date: '2026-06-20', time: '00:00', stadium: 'bbva'     },
     ],
     MD3: [
-      { date: '2026-06-24', time: '20:00', stadium: 'gillette' },
-      { date: '2026-06-24', time: '20:00', stadium: 'lumen'    },
+      { date: '2026-06-25', time: '19:00', stadium: 'atandt'   },
+      { date: '2026-06-25', time: '19:00', stadium: 'arrowhead'},
     ],
   },
   G: {
     MD1: [
-      { date: '2026-06-14', time: '21:00', stadium: 'akron'    },
-      { date: '2026-06-15', time: '12:00', stadium: 'bbva'     },
+      { date: '2026-06-15', time: '15:00', stadium: 'lumen'    },
+      { date: '2026-06-15', time: '21:00', stadium: 'sofi'     },
     ],
     MD2: [
-      { date: '2026-06-19', time: '18:00', stadium: 'akron'   },
-      { date: '2026-06-19', time: '21:00', stadium: 'bbva'    },
+      { date: '2026-06-20', time: '16:00', stadium: 'bmo'      },
+      { date: '2026-06-20', time: '23:00', stadium: 'lumen'    },
     ],
     MD3: [
-      { date: '2026-06-24', time: '20:00', stadium: 'akron'   },
-      { date: '2026-06-24', time: '20:00', stadium: 'bbva'    },
+      { date: '2026-06-26', time: '23:00', stadium: 'lumen'    },
+      { date: '2026-06-26', time: '23:00', stadium: 'bcplace'  },
     ],
   },
   H: {
     MD1: [
-      { date: '2026-06-15', time: '15:00', stadium: 'atandt'  },
-      { date: '2026-06-15', time: '18:00', stadium: 'sofi'    },
+      { date: '2026-06-15', time: '12:00', stadium: 'atlanta'  },
+      { date: '2026-06-15', time: '18:00', stadium: 'hardrock' },
     ],
     MD2: [
-      { date: '2026-06-20', time: '12:00', stadium: 'atandt' },
-      { date: '2026-06-20', time: '15:00', stadium: 'sofi'   },
+      { date: '2026-06-21', time: '12:00', stadium: 'atlanta'  },
+      { date: '2026-06-21', time: '18:00', stadium: 'hardrock' },
     ],
     MD3: [
-      { date: '2026-06-25', time: '20:00', stadium: 'atandt' },
-      { date: '2026-06-25', time: '20:00', stadium: 'sofi'   },
+      { date: '2026-06-26', time: '20:00', stadium: 'nrg'      },
+      { date: '2026-06-26', time: '20:00', stadium: 'akron'    },
     ],
   },
   I: {
     MD1: [
-      { date: '2026-06-15', time: '21:00', stadium: 'levis'    },
-      { date: '2026-06-16', time: '12:00', stadium: 'lumen'    },
+      { date: '2026-06-16', time: '15:00', stadium: 'metlife'  },
+      { date: '2026-06-16', time: '18:00', stadium: 'gillette' },
     ],
     MD2: [
-      { date: '2026-06-21', time: '12:00', stadium: 'levis'  },
-      { date: '2026-06-21', time: '15:00', stadium: 'lumen'  },
+      { date: '2026-06-22', time: '17:00', stadium: 'lincoln'  },
+      { date: '2026-06-22', time: '20:00', stadium: 'metlife'  },
     ],
     MD3: [
-      { date: '2026-06-25', time: '20:00', stadium: 'levis'  },
-      { date: '2026-06-25', time: '20:00', stadium: 'lumen'  },
+      { date: '2026-06-26', time: '15:00', stadium: 'gillette' },
+      { date: '2026-06-26', time: '15:00', stadium: 'bmo'      },
     ],
   },
   J: {
     MD1: [
-      { date: '2026-06-16', time: '15:00', stadium: 'nrg'      },
-      { date: '2026-06-16', time: '18:00', stadium: 'lincoln'  },
+      { date: '2026-06-16', time: '21:00', stadium: 'arrowhead'},
+      { date: '2026-06-16', time: '00:00', stadium: 'levis'    },
     ],
     MD2: [
-      { date: '2026-06-21', time: '18:00', stadium: 'nrg'     },
-      { date: '2026-06-21', time: '21:00', stadium: 'lincoln' },
+      { date: '2026-06-22', time: '13:00', stadium: 'atandt'   },
+      { date: '2026-06-22', time: '23:00', stadium: 'levis'    },
     ],
     MD3: [
-      { date: '2026-06-26', time: '20:00', stadium: 'nrg'     },
-      { date: '2026-06-26', time: '20:00', stadium: 'lincoln' },
+      { date: '2026-06-27', time: '22:00', stadium: 'arrowhead'},
+      { date: '2026-06-27', time: '22:00', stadium: 'atandt'   },
     ],
   },
   K: {
     MD1: [
-      { date: '2026-06-16', time: '21:00', stadium: 'arrowhead' },
-      { date: '2026-06-17', time: '12:00', stadium: 'empower'   },
+      { date: '2026-06-17', time: '13:00', stadium: 'nrg'      },
+      { date: '2026-06-17', time: '22:00', stadium: 'azteca'   },
     ],
     MD2: [
-      { date: '2026-06-22', time: '12:00', stadium: 'arrowhead' },
-      { date: '2026-06-22', time: '15:00', stadium: 'empower'   },
+      { date: '2026-06-23', time: '13:00', stadium: 'nrg'      },
+      { date: '2026-06-23', time: '22:00', stadium: 'akron'    },
     ],
     MD3: [
-      { date: '2026-06-26', time: '20:00', stadium: 'arrowhead' },
-      { date: '2026-06-26', time: '20:00', stadium: 'empower'   },
+      { date: '2026-06-27', time: '19:30', stadium: 'hardrock' },
+      { date: '2026-06-27', time: '19:30', stadium: 'atlanta'  },
     ],
   },
   L: {
     MD1: [
-      { date: '2026-06-17', time: '15:00', stadium: 'hardrock' },
-      { date: '2026-06-17', time: '18:00', stadium: 'bbva'     },
+      { date: '2026-06-17', time: '16:00', stadium: 'atandt'   },
+      { date: '2026-06-17', time: '19:00', stadium: 'bmo'      },
     ],
     MD2: [
-      { date: '2026-06-22', time: '18:00', stadium: 'hardrock' },
-      { date: '2026-06-22', time: '21:00', stadium: 'bbva'     },
+      { date: '2026-06-23', time: '16:00', stadium: 'gillette' },
+      { date: '2026-06-23', time: '19:00', stadium: 'bmo'      },
     ],
     MD3: [
-      { date: '2026-06-26', time: '20:00', stadium: 'hardrock' },
-      { date: '2026-06-26', time: '20:00', stadium: 'bbva'     },
+      { date: '2026-06-27', time: '17:00', stadium: 'metlife'  },
+      { date: '2026-06-27', time: '17:00', stadium: 'lincoln'  },
     ],
   },
 };
@@ -342,7 +345,6 @@ const SCHEDULE = {
 // ── Generate matches ──────────────────────────────────────────────────────────
 function generateMatches() {
   const matches = [];
-  const now = new Date(); // real "now"
 
   for (const [group, teams] of Object.entries(GROUP_DEF)) {
     const [t1, t2, t3, t4] = teams;
@@ -356,16 +358,12 @@ function generateMatches() {
       const scheds = SCHEDULE[group][`MD${md}`];
 
       pairs.forEach(([home, away], i) => {
-        const resKey = `${group}_MD${md}_${i + 1}`;
         const sched = scheds[i];
         const stadium = st(sched.stadium);
         const dateTimeStr = `${sched.date}T${sched.time}:00`;
-        const kickoffDate = new Date(dateTimeStr);
-        const resultData = RESULTS[resKey] ?? null;
-        const isFinished = resultData !== null;
 
         matches.push({
-          id: `match_${group}_MD${md}_${i + 1}`,
+          matchId: `match_${group}_MD${md}_${i + 1}`,
           group,
           phase: 'group',
           matchday: md,
@@ -378,22 +376,22 @@ function generateMatches() {
           city: stadium?.city ?? '',
           country: stadium?.country ?? '',
           capacity: stadium?.capacity ?? 0,
-          result: resultData ? { homeGoals: resultData.homeGoals, awayGoals: resultData.awayGoals } : null,
-          scorers: resultData?.scorers ?? [],
-          status: isFinished ? 'finished' : (kickoffDate <= now ? 'live' : 'upcoming'),
+          result: null,
+          scorers: [],
+          status: 'upcoming',
+          tbd: false,
         });
       });
     }
   }
 
-  // Knockout placeholders
+  // Knockout placeholders (to be filled by admin)
   const knockoutRounds = [
-    { phase: 'r32', label: 'Dieciseisavos', count: 16, startDate: '2026-06-28' },
-    { phase: 'r16', label: 'Octavos',        count: 8,  startDate: '2026-07-05' },
-    { phase: 'qf',  label: 'Cuartos',        count: 4,  startDate: '2026-07-12' },
-    { phase: 'sf',  label: 'Semifinal',       count: 2,  startDate: '2026-07-15' },
-    { phase: 'fp',  label: 'Tercer Puesto',   count: 1,  startDate: '2026-07-18' },
-    { phase: 'final', label: 'Final',         count: 1,  startDate: '2026-07-19' },
+    { phase: 'r32', label: '16vos', count: 16, startDate: '2026-06-28' },
+    { phase: 'r16', label: '8vos',  count: 8,  startDate: '2026-07-05' },
+    { phase: 'qf',  label: '4tos',  count: 4,  startDate: '2026-07-12' },
+    { phase: 'sf',  label: 'sf',    count: 2,  startDate: '2026-07-15' },
+    { phase: 'final', label: 'final', count: 1, startDate: '2026-07-19' },
   ];
 
   const koStadiums = ['metlife', 'azteca', 'sofi', 'atandt', 'levis', 'hardrock', 'nrg', 'lumen'];
@@ -405,7 +403,7 @@ function generateMatches() {
       d.setDate(d.getDate() + Math.floor(i / 2));
       const dateStr = d.toISOString().split('T')[0];
       matches.push({
-        id: `match_${phase}_${i + 1}`,
+        matchId: `match_${phase}_${i + 1}`,
         group: null,
         phase,
         matchday: null,
@@ -446,9 +444,73 @@ export function calculatePoints(prediction, result) {
   return { points: 0, label: 'Sin puntos ❌' };
 }
 
+// ── Mock teams (mapped to TEAMS keys) ──────────────────────────────────────────
+export const MOCK_TEAMS = [
+  // Grupo A
+  { teamId: 'mex', teamName: 'México', group: 'A' },
+  { teamId: 'rsa', teamName: 'Sudáfrica', group: 'A' },
+  { teamId: 'kor', teamName: 'Corea del Sur', group: 'A' },
+  { teamId: 'cze', teamName: 'República Checa', group: 'A' },
+  // Grupo B
+  { teamId: 'can', teamName: 'Canadá', group: 'B' },
+  { teamId: 'bih', teamName: 'Bosnia y Herzegovina', group: 'B' },
+  { teamId: 'qat', teamName: 'Catar', group: 'B' },
+  { teamId: 'sui', teamName: 'Suiza', group: 'B' },
+  // Grupo C
+  { teamId: 'bra', teamName: 'Brasil', group: 'C' },
+  { teamId: 'mar', teamName: 'Marruecos', group: 'C' },
+  { teamId: 'hai', teamName: 'Haití', group: 'C' },
+  { teamId: 'sco', teamName: 'Escocia', group: 'C' },
+  // Grupo D
+  { teamId: 'usa', teamName: 'Estados Unidos', group: 'D' },
+  { teamId: 'par', teamName: 'Paraguay', group: 'D' },
+  { teamId: 'aus', teamName: 'Australia', group: 'D' },
+  { teamId: 'tur', teamName: 'Turquía', group: 'D' },
+  // Grupo E
+  { teamId: 'ger', teamName: 'Alemania', group: 'E' },
+  { teamId: 'cuw', teamName: 'Curaçao', group: 'E' },
+  { teamId: 'civ', teamName: 'Costa de Marfil', group: 'E' },
+  { teamId: 'ecu', teamName: 'Ecuador', group: 'E' },
+  // Grupo F
+  { teamId: 'ned', teamName: 'Países Bajos', group: 'F' },
+  { teamId: 'jpn', teamName: 'Japón', group: 'F' },
+  { teamId: 'swe', teamName: 'Suecia', group: 'F' },
+  { teamId: 'tun', teamName: 'Túnez', group: 'F' },
+  // Grupo G
+  { teamId: 'bel', teamName: 'Bélgica', group: 'G' },
+  { teamId: 'egy', teamName: 'Egipto', group: 'G' },
+  { teamId: 'irn', teamName: 'Irán', group: 'G' },
+  { teamId: 'nzl', teamName: 'Nueva Zelanda', group: 'G' },
+  // Grupo H
+  { teamId: 'esp', teamName: 'España', group: 'H' },
+  { teamId: 'cpv', teamName: 'Cabo Verde', group: 'H' },
+  { teamId: 'ksa', teamName: 'Arabia Saudita', group: 'H' },
+  { teamId: 'uru', teamName: 'Uruguay', group: 'H' },
+  // Grupo I
+  { teamId: 'fra', teamName: 'Francia', group: 'I' },
+  { teamId: 'sen', teamName: 'Senegal', group: 'I' },
+  { teamId: 'irq', teamName: 'Irak', group: 'I' },
+  { teamId: 'nor', teamName: 'Noruega', group: 'I' },
+  // Grupo J
+  { teamId: 'arg', teamName: 'Argentina', group: 'J' },
+  { teamId: 'alg', teamName: 'Argelia', group: 'J' },
+  { teamId: 'aut', teamName: 'Austria', group: 'J' },
+  { teamId: 'jor', teamName: 'Jordania', group: 'J' },
+  // Grupo K
+  { teamId: 'por', teamName: 'Portugal', group: 'K' },
+  { teamId: 'cod', teamName: 'República del Congo', group: 'K' },
+  { teamId: 'uzb', teamName: 'Uzbekistán', group: 'K' },
+  { teamId: 'col', teamName: 'Colombia', group: 'K' },
+  // Grupo L
+  { teamId: 'eng', teamName: 'Inglaterra', group: 'L' },
+  { teamId: 'cro', teamName: 'Croacia', group: 'L' },
+  { teamId: 'gha', teamName: 'Ghana', group: 'L' },
+  { teamId: 'pan', teamName: 'Panamá', group: 'L' },
+];
+
 // ── Mock users ────────────────────────────────────────────────────────────────
 export const MOCK_USERS = [
-  { id: 'user_001', username: 'Alfonso',    email: 'alfonso@example.com',   avatar: '🦁', totalPoints: 0, predCount: 0 },
+  { id: 'user_001', username: 'Alfonso',    email: 'alfonso@example.com',   avatar: '🦁', role: 'admin', totalPoints: 0, predCount: 0 },
   { id: 'user_002', username: 'María',      email: 'maria@example.com',     avatar: '🦊', totalPoints: 0, predCount: 0 },
   { id: 'user_003', username: 'Carlos',     email: 'carlos@example.com',    avatar: '🐯', totalPoints: 0, predCount: 0 },
   { id: 'user_004', username: 'Daniela',    email: 'daniela@example.com',   avatar: '🐼', totalPoints: 0, predCount: 0 },
@@ -490,27 +552,8 @@ const RAW_PREDS = {
 
 // Build full prediction objects with calculated points
 function buildPredictions() {
-  const preds = [];
-  let predId = 1;
-
-  for (const [userId, matchPreds] of Object.entries(RAW_PREDS)) {
-    for (const [matchId, [homeGoals, awayGoals]] of Object.entries(matchPreds)) {
-      const match = MATCHES.find(m => m.id === matchId);
-      if (!match) continue;
-      const pointData = match.result ? calculatePoints({ homeGoals, awayGoals }, match.result) : null;
-      preds.push({
-        id: `pred_${String(predId++).padStart(4, '0')}`,
-        userId,
-        matchId,
-        homeGoals,
-        awayGoals,
-        points: pointData?.points ?? null,
-        pointLabel: pointData?.label ?? null,
-        createdAt: new Date(`${match.date}T08:00:00`).toISOString(),
-      });
-    }
-  }
-  return preds;
+  // DEV: Empty array to test prediction saving from scratch
+  return [];
 }
 
 export const PREDICTIONS = buildPredictions();

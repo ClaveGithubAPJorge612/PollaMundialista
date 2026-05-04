@@ -3,8 +3,10 @@
    Tournament state: Group Stage tables + Knockout Bracket + Top Scorers.
 ───────────────────────────────────────────────────────────────────────────── */
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { computeGroupStandings, computeTopScorers, TEAMS } from '../data/mockData';
+import { getMatches, getTeams } from '../services/dynamodb';
+import { FlagIcon } from '../utils/flagUtils';
 
 /* ══════════════════════════════════════════════════════
    GROUP STAGE VIEW
@@ -16,7 +18,7 @@ function GroupTable({ group, rows }) {
       <div className="group-card-header">
         <span className="bangers group-letter">Grupo {group}</span>
         <div className="group-flags">
-          {rows.map(r => <span key={r.teamId} title={TEAMS[r.teamId]?.name}>{TEAMS[r.teamId]?.flag}</span>)}
+          {rows.map(r => <FlagIcon key={r.teamId} teamId={r.teamId} size="1.5rem" />)}
         </div>
       </div>
 
@@ -47,7 +49,7 @@ function GroupTable({ group, rows }) {
                 </td>
                 <td>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                    <span style={{ fontSize: '1.1rem' }}>{team?.flag}</span>
+                    <FlagIcon teamId={row.teamId} size="1.1rem" />
                     <span style={{ fontWeight: 600 }}>{team?.name}</span>
                   </div>
                 </td>
@@ -70,8 +72,60 @@ function GroupTable({ group, rows }) {
   );
 }
 
+function computeGroupStandingsFromMatches(matches, teams) {
+  const standings = {};
+  const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+
+  groups.forEach(g => {
+    standings[g] = teams.filter(t => t.group === g).map(t => {
+      const groupMatches = matches.filter(m => m.phase === 'group' && m.group === g && (m.homeTeam?.id === t.teamId || m.awayTeam?.id === t.teamId));
+      let played = 0, won = 0, drawn = 0, lost = 0, gf = 0, ga = 0;
+      groupMatches.forEach(m => {
+        if (m.result) {
+          played++;
+          const isHome = m.homeTeam?.id === t.teamId;
+          const scored = isHome ? m.result.homeGoals : m.result.awayGoals;
+          const conceded = isHome ? m.result.awayGoals : m.result.homeGoals;
+          gf += scored;
+          ga += conceded;
+          if (scored > conceded) won++;
+          else if (scored < conceded) lost++;
+          else drawn++;
+        }
+      });
+      const pts = won * 3 + drawn;
+      const gd = gf - ga;
+      return { teamId: t.teamId, played, won, drawn, lost, gf, ga, gd, pts };
+    }).sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf);
+  });
+
+  return standings;
+}
+
 function GroupStageView() {
-  const standings = useMemo(() => computeGroupStandings(), []);
+  const [liveMatches, setLiveMatches] = useState([]);
+  const [liveTeams, setLiveTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const [matches, teams] = await Promise.all([getMatches({ phase: 'group' }), getTeams()]);
+        setLiveMatches(matches);
+        setLiveTeams(teams);
+      } catch (err) {
+        console.error('Error loading mundial data:', err);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const standings = useMemo(() => computeGroupStandingsFromMatches(liveMatches, liveTeams), [liveMatches, liveTeams]);
+
+  if (loading) {
+    return <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-dim)' }}>⏳ Cargando grupos...</div>;
+  }
 
   return (
     <div className="group-grid">
@@ -92,45 +146,86 @@ function GroupStageView() {
 
 // Static bracket structure (TBD for all knockout rounds in current state)
 const BRACKET_ROUNDS = [
-  { label: 'Dieciseisavos', slots: 16 },
-  { label: 'Octavos',       slots:  8 },
-  { label: 'Cuartos',       slots:  4 },
-  { label: 'Semifinal',     slots:  2 },
-  { label: 'Final',         slots:  1 },
+  { label: '16vos (16 llaves)',   slots: 16 },
+  { label: '8vos (8 llaves)',     slots:  8 },
+  { label: '4tos (4 llaves)',     slots:  4 },
+  { label: 'Semifinales (2 llaves)', slots:  2 },
+  { label: 'Final (1 llave)',     slots:  1 },
 ];
 
 function BracketSlot({ top, bottom, index }) {
   return (
     <div className="bracket-match">
       <div className="bracket-team bracket-top">
-        {top?.flag ? `${top.flag} ${top.name}` : <span style={{ color: 'var(--text-dim)' }}>Por definir</span>}
+        {top?.id ? <><FlagIcon teamId={top.id} size="0.9rem" /> {top.name}</> : <span style={{ color: 'var(--text-dim)' }}>Por definir</span>}
       </div>
       <div className="bracket-divider" />
       <div className="bracket-team bracket-bottom">
-        {bottom?.flag ? `${bottom.flag} ${bottom.name}` : <span style={{ color: 'var(--text-dim)' }}>Por definir</span>}
+        {bottom?.id ? <><FlagIcon teamId={bottom.id} size="0.9rem" /> {bottom.name}</> : <span style={{ color: 'var(--text-dim)' }}>Por definir</span>}
       </div>
     </div>
   );
 }
 
 function BracketView() {
+  const [koMatches, setKoMatches] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadKnockoutMatches = async () => {
+      try {
+        const allMatches = await getMatches();
+        const knockout = allMatches.filter(m => ['r32', 'r16', 'qf', 'sf', 'final'].includes(m.phase));
+        setKoMatches(knockout);
+      } catch (err) {
+        console.error('Error loading knockout matches:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadKnockoutMatches();
+    // Reload every 2 seconds to reflect admin changes
+    const interval = setInterval(loadKnockoutMatches, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const phaseOrder = ['r32', 'r16', 'qf', 'sf', 'final'];
+  const matchesByPhase = {
+    r32: koMatches.filter(m => m.phase === 'r32').sort((a, b) => a.matchId.localeCompare(b.matchId)),
+    r16: koMatches.filter(m => m.phase === 'r16').sort((a, b) => a.matchId.localeCompare(b.matchId)),
+    qf: koMatches.filter(m => m.phase === 'qf').sort((a, b) => a.matchId.localeCompare(b.matchId)),
+    sf: koMatches.filter(m => m.phase === 'sf').sort((a, b) => a.matchId.localeCompare(b.matchId)),
+    final: koMatches.filter(m => m.phase === 'final').sort((a, b) => a.matchId.localeCompare(b.matchId)),
+  };
+
   return (
     <div className="bracket-scroll-wrap">
       <div className="bracket-container">
-        {BRACKET_ROUNDS.map((round, ri) => (
-          <div key={round.label} className="bracket-column">
-            <div className="bangers bracket-round-label">{round.label}</div>
-            <div className="bracket-slots" style={{ '--slot-count': round.slots }}>
-              {Array.from({ length: Math.ceil(round.slots / 2) }).map((_, i) => (
-                <BracketSlot key={i} index={i} top={null} bottom={null} />
-              ))}
+        {phaseOrder.map((phase, ri) => {
+          const round = BRACKET_ROUNDS[ri];
+          const phaseMatches = matchesByPhase[phase];
+          return (
+            <div key={round.label} className="bracket-column">
+              <div className="bangers bracket-round-label">{round.label}</div>
+              <div className="bracket-slots" style={{ '--slot-count': round.slots }}>
+                {phaseMatches.map((match) => (
+                  <BracketSlot
+                    key={match.matchId}
+                    index={0}
+                    top={match.homeTeam}
+                    bottom={match.awayTeam}
+                  />
+                ))}
+                {Array.from({ length: Math.max(0, round.slots - phaseMatches.length) }).map((_, i) => (
+                  <BracketSlot key={`empty_${phase}_${i}`} index={i} top={null} bottom={null} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      <p style={{ textAlign: 'center', color: 'var(--text-dim)', fontSize: '0.8rem', marginTop: '1rem', letterSpacing: '1px' }}>
-        🔒 El cuadro se actualizará una vez concluya la Fase de Grupos
-      </p>
+      {loading && <p style={{ textAlign: 'center', color: 'var(--text-dim)', fontSize: '0.8rem', marginTop: '1rem' }}>⏳ Cargando cuadrangular...</p>}
     </div>
   );
 }
@@ -139,8 +234,45 @@ function BracketView() {
    TOP SCORERS
 ══════════════════════════════════════════════════════ */
 
+function computeTopScorersFromMatches(matches) {
+  const scorers = {};
+  matches.forEach(match => {
+    if (match.result && match.scorers) {
+      match.scorers.forEach(s => {
+        const key = `${s.player}_${s.team}`;
+        if (!scorers[key]) {
+          scorers[key] = {
+            player: s.player,
+            team: TEAMS[s.team]?.name ?? s.team,
+            flag: TEAMS[s.team]?.flag ?? '',
+            goals: 0,
+          };
+        }
+        scorers[key].goals++;
+      });
+    }
+  });
+  return Object.values(scorers).sort((a, b) => b.goals - a.goals);
+}
+
 function TopScorers() {
-  const scorers = useMemo(() => computeTopScorers().slice(0, 15), []);
+  const [liveMatches, setLiveMatches] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const matches = await getMatches();
+        setLiveMatches(matches);
+      } catch (err) {
+        console.error('Error loading scorers data:', err);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const scorers = useMemo(() => computeTopScorersFromMatches(liveMatches).slice(0, 15), [liveMatches]);
 
   return (
     <div className="card" style={{ marginTop: '1.5rem' }}>
@@ -148,7 +280,9 @@ function TopScorers() {
         ⚽ Tabla de Goleadores
       </h2>
 
-      {scorers.length === 0 ? (
+      {loading ? (
+        <p style={{ color: 'var(--text-dim)', textAlign: 'center', padding: '1rem' }}>⏳ Cargando...</p>
+      ) : scorers.length === 0 ? (
         <p style={{ color: 'var(--text-dim)', textAlign: 'center', padding: '1rem' }}>
           Aún no hay goles registrados.
         </p>
@@ -163,7 +297,9 @@ function TopScorers() {
             </tr>
           </thead>
           <tbody>
-            {scorers.map((s, idx) => (
+            {scorers.map((s, idx) => {
+              const teamKey = Object.keys(TEAMS).find(key => TEAMS[key].name === s.team);
+              return (
               <tr key={`${s.player}_${s.team}`}>
                 <td>
                   {idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' :
@@ -171,7 +307,7 @@ function TopScorers() {
                 </td>
                 <td style={{ fontWeight: 600 }}>{s.player}</td>
                 <td>
-                  <span style={{ marginRight: 4 }}>{s.flag}</span>
+                  {teamKey && <FlagIcon teamId={teamKey} size="1rem" />}
                   <span style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>{s.team}</span>
                 </td>
                 <td style={{ textAlign: 'right' }}>
@@ -181,7 +317,8 @@ function TopScorers() {
                   </span>
                 </td>
               </tr>
-            ))}
+            );
+            })}
           </tbody>
         </table>
       )}

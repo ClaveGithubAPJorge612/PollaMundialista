@@ -6,6 +6,7 @@
 import { useEffect, useState } from 'react';
 import { getStandings, getMatches } from '../services/dynamodb';
 import { useAuth } from '../hooks/useAuth';
+import { FlagIcon } from '../utils/flagUtils';
 
 function StatCard({ icon, value, label, color = 'var(--green)' }) {
   return (
@@ -142,12 +143,12 @@ export default function Dashboard({ onTabChange }) {
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 {nextMatches.map(m => (
-                  <div key={m.id} className="next-match-row">
+                  <div key={m.matchId} className="next-match-row">
                     <span className="badge badge-titles" style={{ fontSize: '0.65rem' }}>Grupo {m.group}</span>
                     <div className="nmr-teams">
-                      <span>{m.homeTeam.flag} {m.homeTeam.name}</span>
+                      <span><FlagIcon teamId={m.homeTeam.id} size="1rem" /> {m.homeTeam.name}</span>
                       <span className="bangers nmr-vs">VS</span>
-                      <span>{m.awayTeam.name} {m.awayTeam.flag}</span>
+                      <span>{m.awayTeam.name} <FlagIcon teamId={m.awayTeam.id} size="1rem" /></span>
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textAlign: 'center' }}>
                       {new Date(m.kickoff).toLocaleDateString('es-CO', { weekday:'short', day:'numeric', month:'short' })} · {m.time}
