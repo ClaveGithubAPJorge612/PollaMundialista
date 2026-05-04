@@ -231,26 +231,27 @@ export default function Mundial() {
           display: flex;
           gap: 6px;
           margin-bottom: 1.2rem;
-          background: var(--surface2);
+          background: var(--surface);
           border: 1px solid var(--border);
           border-radius: var(--r-md);
           padding: 4px;
           width: fit-content;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
         .view-btn {
           padding: 8px 24px;
-          background: transparent;
+          background: var(--surface2);
           border: none;
           border-radius: calc(var(--r-md) - 3px);
-          color: var(--text-dim);
+          color: var(--text);
           font-size: 0.95rem;
           letter-spacing: 1.5px;
           cursor: pointer;
           transition: all 0.2s;
         }
         .view-btn.active {
-          background: rgba(110,207,66,0.15);
-          color: var(--green);
+          background: var(--bg);
+          color: var(--cream);
           box-shadow: inset 0 0 0 1px var(--border-hl);
         }
         .view-btn:not(.active):hover { color: var(--light-green); }
@@ -269,7 +270,7 @@ export default function Mundial() {
           justify-content: space-between;
           margin-bottom: 0.7rem;
         }
-        .group-letter { font-size: 1.4rem; letter-spacing: 3px; color: var(--cream); }
+        .group-letter { font-size: 1.4rem; letter-spacing: 3px; color: var(--text); }
         .group-flags { display: flex; gap: 6px; font-size: 1.3rem; }
 
         .group-table th, .group-table td { padding: 0.4rem 0.5rem; }

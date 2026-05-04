@@ -1,0 +1,304 @@
+{
+  "polla-teams": [
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "ned"
+            },
+            "teamName": {
+                "S": "Paises Bajos"
+                },
+            "group": {
+                "S": "F"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "jpn"
+            },
+            "teamName": {
+                "S": "Japón"
+                },
+            "group": {
+                "S": "F"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "swe"
+            },
+            "teamName": {
+                "S": "Suecia"
+                },
+            "group": {
+                "S": "F"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "tun"
+            },
+            "teamName": {
+                "S": "Túnez"
+                },
+            "group": {
+                "S": "F"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "bel"
+            },
+            "teamName": {
+                "S": "Bélgica"
+                },
+            "group": {
+                "S": "G"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "egy"
+            },
+            "teamName": {
+                "S": "Egipto"
+                },
+            "group": {
+                "S": "G"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "irn"
+            },
+            "teamName": {
+                "S": "Irán"
+                },
+            "group": {
+                "S": "G"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "nzl"
+            },
+            "teamName": {
+                "S": "Nueva Zelanda"
+                },
+            "group": {
+                "S": "G"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "esp"
+            },
+            "teamName": {
+                "S": "España"
+                },
+            "group": {
+                "S": "H"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "cpv"
+            },
+            "teamName": {
+                "S": "Cabo Verde"
+                },
+            "group": {
+                "S": "H"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "ksa"
+            },
+            "teamName": {
+                "S": "Arabia Saudita"
+                },
+            "group": {
+                "S": "H"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "uru"
+            },
+            "teamName": {
+                "S": "Uruguay"
+                },
+            "group": {
+                "S": "H"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "fra"
+            },
+            "teamName": {
+                "S": "Francia"
+                },
+            "group": {
+                "S": "I"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "sen"
+            },
+            "teamName": {
+                "S": "Senegal"
+                },
+            "group": {
+                "S": "I"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "irq"
+            },
+            "teamName": {
+                "S": "Irak"
+                },
+            "group": {
+                "S": "I"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "nor"
+            },
+            "teamName": {
+                "S": "Noruega"
+                },
+            "group": {
+                "S": "I"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "arg"
+            },
+            "teamName": {
+                "S": "Argentina"
+                },
+            "group": {
+                "S": "J"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "alg"
+            },
+            "teamName": {
+                "S": "Argelia"
+                },
+            "group": {
+                "S": "J"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "aut"
+            },
+            "teamName": {
+                "S": "Austria"
+                },
+            "group": {
+                "S": "J"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "jor"
+            },
+            "teamName": {
+                "S": "Jordania"
+                },
+            "group": {
+                "S": "J"
+                }
+            }
+        }
+    }
+    ]
+}

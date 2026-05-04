@@ -243,7 +243,7 @@ export default function AuthPanel() {
         .auth-trophy { font-size: 3.5rem; filter: drop-shadow(0 0 20px rgba(110,207,66,0.5)); margin-bottom: 0.5rem; }
         .auth-title {
           font-size: 2.2rem;
-          letter-spacing: 4px;
+          letter-spacing: 1px;
           background: linear-gradient(135deg, var(--green), var(--light-green), var(--cream));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -310,7 +310,7 @@ export default function AuthPanel() {
           text-align: center;
           font-family: var(--font-display);
           font-size: 1.8rem;
-          letter-spacing: 8px;
+          letter-spacing: 4px;
         }
 
         .btn-spinner {

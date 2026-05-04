@@ -15,7 +15,7 @@ const PHASE_LABELS = {
   qf:    'Cuartos de Final',
   sf:    'Semifinal',
   fp:    'Tercer Puesto',
-  final: 'FINAL',
+  final: 'Final',
 };
 
 const PHASE_COLORS = {
@@ -38,8 +38,8 @@ function MatchCard({ match, onClick }) {
 
   return (
     <div className={`cal-match-card ${isLive ? 'cal-live' : ''}`} onClick={() => onClick(match)}>
-      <div className="cmc-phase" style={{ borderLeftColor: phaseColor }}>
-        <span className="bangers cmc-phase-label" style={{ color: phaseColor }}>
+      <div className="cmc-phase" style={{ borderLeftColor: 'var(--text)' }}>
+        <span className="bangers cmc-phase-label" style={{ color: 'var(--text)' }}>
           {PHASE_LABELS[match.phase] ?? match.phase}
         </span>
         {match.group && (
@@ -57,7 +57,7 @@ function MatchCard({ match, onClick }) {
           </div>
         ) : (
           <div className="cmc-teams">
-            <div className="cmc-team">
+            <div className="cmc-team-home">
               <span className="cmc-flag">{match.homeTeam?.flag}</span>
               <span className="cmc-name">{match.homeTeam?.name}</span>
             </div>
@@ -75,7 +75,7 @@ function MatchCard({ match, onClick }) {
               )}
             </div>
 
-            <div className="cmc-team cmc-team-away">
+            <div className="cmc-team-away">
               <span className="cmc-name">{match.awayTeam?.name}</span>
               <span className="cmc-flag">{match.awayTeam?.flag}</span>
             </div>
@@ -265,7 +265,7 @@ function MatchModal({ match, onClose }) {
         .modal-flag { font-size: 3rem; }
         .modal-team-name { font-size: 1.1rem; letter-spacing: 1px; text-align: center; }
         .modal-center { display: flex; flex-direction: column; align-items: center; }
-        .modal-final-score { font-size: 2.8rem; letter-spacing: 4px; color: var(--dark-green); font-weight: 700; }
+        .modal-final-score { font-size: 2.8rem; letter-spacing: 2px; color: var(--dark-green); font-weight: 700; }
         .modal-kickoff-time { font-size: 2rem; color: var(--green); font-weight: 700; }
 
         .modal-scorers { margin-bottom: 1rem; }
@@ -344,7 +344,6 @@ export default function Calendar() {
   return (
     <div className="section-wrap fade-up">
       <h1 className="section-title">📅 Calendario</h1>
-      <p className="section-subtitle">Todos los encuentros · Mundial 2026</p>
 
       {/* Phase tabs */}
       <div className="cal-phase-tabs">
@@ -353,7 +352,7 @@ export default function Calendar() {
             key={p}
             className={`filter-tab ${phaseFilter === p ? 'active' : ''}`}
             onClick={() => setPhase(p)}
-            style={phaseFilter === p ? { background: `${PHASE_COLORS[p]}22`, borderColor: PHASE_COLORS[p], color: PHASE_COLORS[p] } : {}}
+            style={phaseFilter === p ? { } : {}}
           >
             {PHASE_LABELS[p]}
           </button>
@@ -389,7 +388,6 @@ export default function Calendar() {
               <span className="bangers cal-day-title">
                 {new Date(date + 'T12:00:00').toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
               </span>
-              <span className="badge badge-cream">{dayMatches.length} partidos</span>
             </div>
             <div className="cal-day-matches">
               {dayMatches.map(m => (
@@ -409,9 +407,10 @@ export default function Calendar() {
           flex-wrap: wrap;
           margin-bottom: 1.5rem;
           padding: 1rem;
-          background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+          background: linear-gradient(135deg, var(--surface) 0%, var(--surface) 100%);
           border-radius: var(--r-lg);
           border: 1px solid var(--border);
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
 
         .filter-tab {
@@ -421,13 +420,14 @@ export default function Calendar() {
           background: var(--surface2);
           color: var(--text);
           font-family: var(--font-body);
-          font-size: 0.95rem;
+          font-size: 0.7rem;
           font-weight: 600;
           letter-spacing: 1px;
           cursor: pointer;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
 
         .filter-tab::before {
@@ -444,19 +444,19 @@ export default function Calendar() {
         }
 
         .filter-tab:hover {
-          border-color: var(--green);
-          color: var(--dark-green);
-          background: rgba(110, 207, 66, 0.12);
+          border-color: var(--cream);
+          color: var(--text);
+          background: var(--bg);
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(110, 207, 66, 0.15);
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
 
         .filter-tab.active {
-          background: linear-gradient(135deg, var(--green), var(--light-green));
+          background: linear-gradient(135deg, var(--bg), var(--bg));
           color: #1a1a1a;
-          border-color: transparent;
+          border-color: #1a1a1a;
           font-weight: 700;
-          box-shadow: 0 6px 16px rgba(110, 207, 66, 0.3);
+          box-shadow: 8px 8px 0px rgb(5 18 30);
           transform: translateY(-2px);
         }
 
@@ -477,8 +477,8 @@ export default function Calendar() {
           padding-bottom: 0.4rem;
           border-bottom: 1px solid var(--border);
         }
-        .cal-day-title { font-size: 1.1rem; letter-spacing: 2px; color: var(--light-green); text-transform: capitalize; }
-        .cal-day-matches { display: flex; flex-direction: column; gap: 0.5rem; }
+        .cal-day-title { font-size: 1.1rem; letter-spacing: 2px; color: var(--cream); text-transform: capitalize; }
+        .cal-day-matches { display: flex; flex-direction: column; gap: 1.5rem; }
 
         .cal-match-card {
           background: var(--surface2);
@@ -487,6 +487,7 @@ export default function Calendar() {
           padding: 0.8rem 1rem;
           cursor: pointer;
           transition: all 0.18s;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
         .cal-match-card:hover { border-color: var(--border-hl); background: var(--surface3); transform: translateY(-1px); }
         .cal-match-card.cal-live { border-color: #ff6060; box-shadow: 0 0 12px rgba(255,96,96,0.2); }
@@ -502,13 +503,14 @@ export default function Calendar() {
 
         .cmc-body { margin-bottom: 6px; }
         .cmc-teams {
-          display: flex; align-items: center; justify-content: space-between; gap: 8px;
+          display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
         }
-        .cmc-team { display: flex; align-items: center; gap: 6px; flex: 1; }
+        .cmc-team-home { display: flex; align-items: center; gap: 6px; flex: 1; justify-content: right;}
+        .cmc-team-away { display: flex; align-items: center; gap: 6px; flex: 1; justify-content: left;}
         .cmc-flag { font-size: 1.4rem; }
-        .cmc-name { font-size: 0.9rem; font-weight: 600; }
+        .cmc-name { font-size: 1.5rem; font-weight: 600; }
         .cmc-score-wrap { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
-        .cmc-final-score { font-size: 1.5rem; color: var(--cream); letter-spacing: 3px; }
+        .cmc-final-score { font-size: 2rem; color: var(--text); letter-spacing: 3px; }
         .cmc-time { font-size: 1.2rem; color: var(--green); }
         .cmc-tbd { display: flex; align-items: center; gap: 12px; font-size: 1rem; color: var(--text-dim); justify-content: center; }
         .cmc-vs { font-size: 1rem; color: var(--text-dim); }

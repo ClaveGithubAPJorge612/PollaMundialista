@@ -59,7 +59,6 @@ export default function Dashboard({ onTabChange }) {
       {/* ── Welcome banner ── */}
       <div className="welcome-banner">
         <div className="welcome-left">
-          <div className="welcome-avatar">{user?.avatar ?? '⚽'}</div>
           <div>
             <div className="bangers welcome-name">Hola, {user?.username ?? 'Jugador'} 👋</div>
             <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>
@@ -68,7 +67,7 @@ export default function Dashboard({ onTabChange }) {
           </div>
         </div>
         <div className="welcome-pts bangers">
-          <span style={{ fontSize: '2.5rem', color: 'var(--green)' }}>{myStats?.totalPoints ?? 0}</span>
+          <span style={{ fontSize: '2.5rem', color: 'var(--text)' }}>{myStats?.totalPoints ?? 0}</span>
           <span style={{ fontSize: '0.9rem', color: 'var(--text-dim)', letterSpacing: '2px' }}>PUNTOS</span>
         </div>
       </div>
@@ -77,8 +76,8 @@ export default function Dashboard({ onTabChange }) {
       {myStats && (
         <div className="stats-row">
           <StatCard icon="🎯" value={myStats.exactCount}   label="Exactos"  color="var(--green)" />
-          <StatCard icon="✅" value={myStats.partialCount} label="Parciales" color="var(--light-green)" />
-          <StatCard icon="📋" value={myStats.predCount}    label="Preds"    color="var(--cream)" />
+          <StatCard icon="✅" value={myStats.partialCount} label="Parciales" color="var(--green)" />
+          <StatCard icon="📋" value={myStats.predCount}    label="Preds"    color="var(--green)" />
           <StatCard icon="🏅" value={myRank > 0 ? `#${myRank}` : '-'} label="Posición" color="#ffd700" />
         </div>
       )}
@@ -144,7 +143,7 @@ export default function Dashboard({ onTabChange }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 {nextMatches.map(m => (
                   <div key={m.id} className="next-match-row">
-                    <span className="badge badge-purple" style={{ fontSize: '0.65rem' }}>Grupo {m.group}</span>
+                    <span className="badge badge-titles" style={{ fontSize: '0.65rem' }}>Grupo {m.group}</span>
                     <div className="nmr-teams">
                       <span>{m.homeTeam.flag} {m.homeTeam.name}</span>
                       <span className="bangers nmr-vs">VS</span>
@@ -194,6 +193,7 @@ export default function Dashboard({ onTabChange }) {
           border-radius: var(--r-lg);
           padding: 1.2rem 1.5rem;
           margin-bottom: 1.2rem;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
         .welcome-left { display: flex; align-items: center; gap: 1rem; }
         .welcome-avatar { font-size: 2.5rem; filter: drop-shadow(0 0 10px rgba(110,207,66,0.4)); }
@@ -216,6 +216,7 @@ export default function Dashboard({ onTabChange }) {
           border-radius: var(--r-md);
           padding: 0.8rem 0.5rem;
           text-align: center;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
         .stat-icon  { font-size: 1.4rem; }
         .stat-value { font-size: 1.8rem; line-height: 1; }
@@ -234,7 +235,7 @@ export default function Dashboard({ onTabChange }) {
           justify-content: space-between;
           margin-bottom: 1rem;
         }
-        .card-title { font-size: 1.3rem; letter-spacing: 2px; color: var(--cream); }
+        .card-title { font-size: 1rem; letter-spacing: 2px; color: var(--text); }
 
         .rank-badge {
           display: inline-flex;
@@ -258,6 +259,7 @@ export default function Dashboard({ onTabChange }) {
           display: flex;
           flex-direction: column;
           gap: 4px;
+          box-shadow: 8px 8px 0px rgb(5 18 30);
         }
         .nmr-teams {
           display: flex;

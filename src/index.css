@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ── Custom Fonts ── */
+@font-face {
+  font-family: 'FIFA 26';
+  src: url('./assets/fonts/fifa-26.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FWC 2026';
+  src: url('./assets/fonts/FWC2026-NormalRegular.77c3c249.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FWC 2026 EXPANDED';
+  src: url('./assets/fonts/FWC2026-SemiExpandedBlack.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --cream:       #070707;
@@ -8,29 +30,31 @@
   --purple:      #7a5a7b;
 
   /* Backgrounds */
-  --bg:          #f8f7f4;
-  --surface:     #e8e9f0;
-  --surface2:    #eff0fd;
-  --surface3:    #d6d7e5;
+  --bg:          #009f42;
+  --surface:     #218AF3;
+  --surface2:    #132a3b;
+  --surface3:    #1d62a8;
+  --surface4:    #132a3b;
   --glass:       rgba(110, 207, 66, 0.08);
 
   /* Text */
-  --text:        #2c2a27;
-  --text-muted:  #6b7a5c;
-  --text-dim:    rgba(44, 42, 39, 0.5);
+  --text:        #ffffff;
+  --text-muted:  #e0e0e0;
+  --text-dim:    rgba(255, 255, 255, 0.801);
 
   /* Borders */
-  --border:      rgba(110, 207, 66, 0.25);
-  --border-hl:   rgba(110, 207, 66, 0.5);
+  --border:      rgb(0, 0, 0);
+  --border-hl:   rgb(0, 0, 0);
 
   /* Fonts */
-  --font-display: 'Bangers', cursive;
-  --font-body:    'Rajdhani', sans-serif;
+  --font-display: 'FWC 2026', cursive;
+  --font-body:    'Noto Sans', sans-serif;
+  --font-title:    'FIFA 26', sans-serif;
 
   /* Radii */
-  --r-sm: 6px;
-  --r-md: 12px;
-  --r-lg: 20px;
+  --r-sm: 2px;
+  --r-md: 5px;
+  --r-lg: 10px;
 }
 
 * {
@@ -42,7 +66,11 @@
 html, body, #root {
   height: 100%;
   font-family: var(--font-body);
-  background: var(--bg);
+  background-image: url('./assets/images/mosaico1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text);
   overflow-x: hidden;
 }
@@ -53,13 +81,16 @@ html, body, #root {
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 10px; }
 
 /* ── Utility classes ── */
-.bangers { font-family: var(--font-display); letter-spacing: 2px; }
+.bangers { font-family: var(--font-display); letter-spacing: 0px; }
+.fifa-main { font-family: var(--font-title); letter-spacing: 0px; }
+.fifa-expanded { font-family: 'FWC 2026 EXPANDED', sans-serif; letter-spacing: 0px; }
 
 .card {
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   padding: 1.2rem;
+  box-shadow: 8px 8px 0px rgb(5 18 30);
 }
 
 .badge {
@@ -78,6 +109,7 @@ html, body, #root {
 .badge-purple { background: rgba(122, 90, 123, 0.15);  color: #5a4a7b;            border: 1px solid var(--purple); }
 .badge-cream  { background: rgba(110, 207, 66, 0.12); color: #31a252;       border: 1px solid rgba(110,207,66,0.4); }
 .badge-gold   { background: rgba(255, 200, 0, 0.12);  color: #d4a620;            border: 1px solid rgba(255,200,0,0.5); }
+.badge-titles { background: rgba(255, 255, 255, 0.335);  color: #ffffff;            border: 1px solid rgba(255, 255, 255, 0.5); }
 
 /* ── Buttons ── */
 .btn {
@@ -89,7 +121,7 @@ html, body, #root {
   border-radius: var(--r-sm);
   font-family: var(--font-display);
   font-size: 1.05rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
   border: none;
   transition: all 0.2s ease;
@@ -148,8 +180,8 @@ html, body, #root {
 .section-title {
   font-family: var(--font-display);
   font-size: 2.4rem;
-  letter-spacing: 4px;
-  color: var(--dark-green);
+  letter-spacing: 1px;
+  color: var(--text);
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -175,7 +207,7 @@ html, body, #root {
   gap: 4px;
   font-family: var(--font-display);
   font-size: 1.3rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* ── Table ── */
@@ -187,7 +219,7 @@ html, body, #root {
 .wc-table th {
   color: var(--text-dim);
   font-size: 0.7rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   padding: 0.5rem 0.8rem;
   text-align: left;

@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import logoFifa from '../assets/images/Logofifa26.png';
 
 const TABS = [
   { id: 'dashboard', label: 'Inicio',      icon: '🏠' },
@@ -25,8 +26,8 @@ export default function Navbar({ activeTab, onTabChange }) {
       {/* ── Desktop / Tablet Top Bar ─────────────────────────────────────── */}
       <header className="navbar-top">
         <div className="navbar-logo" onClick={() => onTabChange('dashboard')}>
-          <span className="logo-icon">⚽</span>
-          <span className="bangers logo-text">POLLA MUNDIAL 2026</span>
+          <img src={logoFifa} alt="FIFA 26" className="logo-image" />
+          <span className="fifa-expanded logo-text">POLLA APP MUNDIAL 26</span>
         </div>
 
         <nav className="navbar-tabs">
@@ -92,25 +93,30 @@ export default function Navbar({ activeTab, onTabChange }) {
           gap: 1rem;
           padding: 0 1.5rem;
           height: 60px;
-          background: rgba(236, 230, 254, 0.95);
+          background: var(--surface4);
           backdrop-filter: blur(12px);
           border-bottom: 1px solid var(--border);
         }
 
         .navbar-logo {
           display: flex;
+          flex-direction: row;
           align-items: center;
-          gap: 8px;
+          justify-content: center;
+          gap: 20px;
           cursor: pointer;
           flex-shrink: 0;
+        }
+        .logo-image {
+          height: 40px;
+          width: auto;
+          object-fit: contain;
         }
         .logo-icon { font-size: 1.4rem; }
         .logo-text {
           font-size: 1.3rem;
           letter-spacing: 3px;
-          background: linear-gradient(90deg, var(--green), var(--light-green), var(--cream));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #ffffff;
         }
 
         .navbar-tabs {
@@ -125,7 +131,7 @@ export default function Navbar({ activeTab, onTabChange }) {
           background: transparent;
           border: 1px solid transparent;
           border-radius: var(--r-sm);
-          color: var(--text-dim);
+          color: #ffffff;
           cursor: pointer;
           transition: all 0.2s;
           white-space: nowrap;
@@ -149,7 +155,7 @@ export default function Navbar({ activeTab, onTabChange }) {
           background: var(--surface2);
           border: 1px solid var(--border);
           border-radius: 30px;
-          color: var(--text-muted);
+          color: #ffffff;
           cursor: pointer;
           font-family: var(--font-body);
           font-size: 0.9rem;
@@ -179,7 +185,7 @@ export default function Navbar({ activeTab, onTabChange }) {
           background: transparent;
           border: none;
           border-radius: var(--r-sm);
-          color: var(--text-muted);
+          color: #ffffff;
           font-family: var(--font-body);
           font-size: 0.95rem;
           text-align: left;

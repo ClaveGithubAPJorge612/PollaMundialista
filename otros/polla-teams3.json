@@ -1,0 +1,124 @@
+{
+  "polla-teams": [
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "por"
+            },
+            "teamName": {
+                "S": "Portugal"
+                },
+            "group": {
+                "S": "K"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "cod"
+            },
+            "teamName": {
+                "S": "República del Congo"
+                },
+            "group": {
+                "S": "K"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "uzb"
+            },
+            "teamName": {
+                "S": "Uzbekistán"
+                },
+            "group": {
+                "S": "K"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "col"
+            },
+            "teamName": {
+                "S": "Colombia"
+                },
+            "group": {
+                "S": "K"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "eng"
+            },
+            "teamName": {
+                "S": "Inglaterra"
+                },
+            "group": {
+                "S": "L"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "cro"
+            },
+            "teamName": {
+                "S": "Croacia"
+                },
+            "group": {
+                "S": "L"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "gha"
+            },
+            "teamName": {
+                "S": "Ghana"
+                },
+            "group": {
+                "S": "L"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "pan"
+            },
+            "teamName": {
+                "S": "Panamá"
+                },
+            "group": {
+                "S": "L"
+                }
+            }
+        }
+    }
+    ]
+}

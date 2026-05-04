@@ -1,0 +1,1329 @@
+{
+  "polla-matches": [
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m1"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-11"
+          },
+          "kickoff": {
+            "S": "2026-06-11T15:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Azteca"
+          },
+          "city": {
+            "S": "Mexico City"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "A"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "México"
+              },
+              "flag": {
+                "S": "🇲🇽"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Sudáfrica"
+              },
+              "flag": {
+                "S": "🇿🇦"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m2"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-11"
+          },
+          "kickoff": {
+            "S": "2026-06-11T22:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Guadalajara"
+          },
+          "city": {
+            "S": "Guadalajara"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "A"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Corea del Sur"
+              },
+              "flag": {
+                "S": "🇰🇷"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "República Checa"
+              },
+              "flag": {
+                "S": "🇨🇿"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m3"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-12"
+          },
+          "kickoff": {
+            "S": "2026-06-12T15:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Toronto"
+          },
+          "city": {
+            "S": "Toronto"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "B"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Canadá"
+              },
+              "flag": {
+                "S": "🇨🇦"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Bosnia y Herzegovina"
+              },
+              "flag": {
+                "S": "🇧🇦"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m4"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-12"
+          },
+          "kickoff": {
+            "S": "2026-06-12T21:00:00Z"
+          },
+          "stadium": {
+            "S": "SoFi Stadium"
+          },
+          "city": {
+            "S": "Los Ángeles"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "D"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Estados UnmatchIdos"
+              },
+              "flag": {
+                "S": "🇺🇸"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Paraguay"
+              },
+              "flag": {
+                "S": "🇵🇾"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m5"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-13"
+          },
+          "kickoff": {
+            "S": "2026-06-13T15:00:00Z"
+          },
+          "stadium": {
+            "S": "Levi's Stadium"
+          },
+          "city": {
+            "S": "San Francisco"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "B"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Catar"
+              },
+              "flag": {
+                "S": "🇶🇦"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Suiza"
+              },
+              "flag": {
+                "S": "🇨🇭"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m6"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-13"
+          },
+          "kickoff": {
+            "S": "2026-06-13T18:00:00Z"
+          },
+          "stadium": {
+            "S": "MetLife Stadium"
+          },
+          "city": {
+            "S": "New York NJ"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "C"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Brasil"
+              },
+              "flag": {
+                "S": "🇧🇷"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Marruecos"
+              },
+              "flag": {
+                "S": "🇲🇦"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m7"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-13"
+          },
+          "kickoff": {
+            "S": "2026-06-13T21:00:00Z"
+          },
+          "stadium": {
+            "S": "Gillette Stadium"
+          },
+          "city": {
+            "S": "Boston"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "C"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Haití"
+              },
+              "flag": {
+                "S": "🇭🇹"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Escocia"
+              },
+              "flag": {
+                "S": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m8"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-13"
+          },
+          "kickoff": {
+            "S": "2026-06-13T00:00:00Z"
+          },
+          "stadium": {
+            "S": "BC Place"
+          },
+          "city": {
+            "S": "Vancouver"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "D"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Australia"
+              },
+              "flag": {
+                "S": "🇦🇺"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Turquía"
+              },
+              "flag": {
+                "S": "🇹🇷"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m9"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-14"
+          },
+          "kickoff": {
+            "S": "2026-06-14T13:00:00Z"
+          },
+          "stadium": {
+            "S": "NRG Stadium"
+          },
+          "city": {
+            "S": "Houston"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "E"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Alemania"
+              },
+              "flag": {
+                "S": "🇩🇪"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Curazao"
+              },
+              "flag": {
+                "S": "🇨🇼"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m10"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-14"
+          },
+          "kickoff": {
+            "S": "2026-06-14T16:00:00Z"
+          },
+          "stadium": {
+            "S": "AT&T Stadium"
+          },
+          "city": {
+            "S": "Dallas"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "F"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Países Bajos"
+              },
+              "flag": {
+                "S": "🇳🇱"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Japón"
+              },
+              "flag": {
+                "S": "🇯🇵"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m11"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-14"
+          },
+          "kickoff": {
+            "S": "2026-06-14T19:00:00Z"
+          },
+          "stadium": {
+            "S": "Lincoln Financial Field"
+          },
+          "city": {
+            "S": "Filadelfia"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "E"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Costa de Marfil"
+              },
+              "flag": {
+                "S": "🇨🇮"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Ecuador"
+              },
+              "flag": {
+                "S": "🇪🇨"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m12"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-14"
+          },
+          "kickoff": {
+            "S": "2026-06-14T22:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Monterrey"
+          },
+          "city": {
+            "S": "Monterrey"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "F"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Suecia"
+              },
+              "flag": {
+                "S": "🇸🇪"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Túnez"
+              },
+              "flag": {
+                "S": "🇹🇳"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m13"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-15"
+          },
+          "kickoff": {
+            "S": "2026-06-15T12:00:00Z"
+          },
+          "stadium": {
+            "S": "Mercedes-Benz Stadium"
+          },
+          "city": {
+            "S": "Atlanta"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "H"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "España"
+              },
+              "flag": {
+                "S": "🇪🇸"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Cabo Verde"
+              },
+              "flag": {
+                "S": "🇨🇻"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m14"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-15"
+          },
+          "kickoff": {
+            "S": "2026-06-15T15:00:00Z"
+          },
+          "stadium": {
+            "S": "Lumen Field"
+          },
+          "city": {
+            "S": "Seattle"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "G"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Bélgica"
+              },
+              "flag": {
+                "S": "🇧🇪"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Egipto"
+              },
+              "flag": {
+                "S": "🇪🇬"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m15"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-15"
+          },
+          "kickoff": {
+            "S": "2026-06-15T18:00:00Z"
+          },
+          "stadium": {
+            "S": "Hard Rock Stadium"
+          },
+          "city": {
+            "S": "Miami"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "H"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Arabia Saudí"
+              },
+              "flag": {
+                "S": "🇸🇦"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Uruguay"
+              },
+              "flag": {
+                "S": "🇺🇾"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m16"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-15"
+          },
+          "kickoff": {
+            "S": "2026-06-15T21:00:00Z"
+          },
+          "stadium": {
+            "S": "SoFi Stadium"
+          },
+          "city": {
+            "S": "Los Ángeles"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "G"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Irán"
+              },
+              "flag": {
+                "S": "🇮🇷"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Nueva Zelanda"
+              },
+              "flag": {
+                "S": "🇳🇿"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m17"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-16"
+          },
+          "kickoff": {
+            "S": "2026-06-16T15:00:00Z"
+          },
+          "stadium": {
+            "S": "MetLife Stadium"
+          },
+          "city": {
+            "S": "New York NJ"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "I"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Francia"
+              },
+              "flag": {
+                "S": "🇫🇷"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Senegal"
+              },
+              "flag": {
+                "S": "🇸🇳"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m18"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-16"
+          },
+          "kickoff": {
+            "S": "2026-06-16T18:00:00Z"
+          },
+          "stadium": {
+            "S": "Gillette Stadium"
+          },
+          "city": {
+            "S": "Boston"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "I"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Irak"
+              },
+              "flag": {
+                "S": "🇮🇶"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Noruega"
+              },
+              "flag": {
+                "S": "🇳🇴"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m19"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-16"
+          },
+          "kickoff": {
+            "S": "2026-06-16T21:00:00Z"
+          },
+          "stadium": {
+            "S": "Arrowhead Stadium"
+          },
+          "city": {
+            "S": "Kansas City"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "J"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Argentina"
+              },
+              "flag": {
+                "S": "🇦🇷"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Argelia"
+              },
+              "flag": {
+                "S": "🇩🇿"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m20"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-16"
+          },
+          "kickoff": {
+            "S": "2026-06-16T00:00:00Z"
+          },
+          "stadium": {
+            "S": "Levi's Stadium"
+          },
+          "city": {
+            "S": "San Francisco"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "J"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Austria"
+              },
+              "flag": {
+                "S": "🇦🇹"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Jordania"
+              },
+              "flag": {
+                "S": "🇯🇴"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m21"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-17"
+          },
+          "kickoff": {
+            "S": "2026-06-17T13:00:00Z"
+          },
+          "stadium": {
+            "S": "NRG Stadium"
+          },
+          "city": {
+            "S": "Houston"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "K"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Portugal"
+              },
+              "flag": {
+                "S": "🇵🇹"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "RD Congo"
+              },
+              "flag": {
+                "S": "🇨🇩"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m22"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-17"
+          },
+          "kickoff": {
+            "S": "2026-06-17T16:00:00Z"
+          },
+          "stadium": {
+            "S": "AT&T Stadium"
+          },
+          "city": {
+            "S": "Dallas"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "L"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Inglaterra"
+              },
+              "flag": {
+                "S": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Croacia"
+              },
+              "flag": {
+                "S": "🇭🇷"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m23"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-17"
+          },
+          "kickoff": {
+            "S": "2026-06-17T19:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Toronto"
+          },
+          "city": {
+            "S": "Toronto"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "L"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Ghana"
+              },
+              "flag": {
+                "S": "🇬🇭"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Panamá"
+              },
+              "flag": {
+                "S": "🇵🇦"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m24"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-17"
+          },
+          "kickoff": {
+            "S": "2026-06-17T22:00:00Z"
+          },
+          "stadium": {
+            "S": "Estadio Azteca"
+          },
+          "city": {
+            "S": "Mexico City"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "K"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "Uzbekistán"
+              },
+              "flag": {
+                "S": "🇺🇿"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Colombia"
+              },
+              "flag": {
+                "S": "🇨🇴"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "matchId": {
+            "S": "m25"
+          },
+          "phase": {
+            "S": "group"
+          },
+          "date": {
+            "S": "2026-06-18"
+          },
+          "kickoff": {
+            "S": "2026-06-18T12:00:00Z"
+          },
+          "stadium": {
+            "S": "Mercedes-Benz Stadium"
+          },
+          "city": {
+            "S": "Atlanta"
+          },
+          "status": {
+            "S": "scheduled"
+          },
+          "tbd": {
+            "BOOL": false
+          },
+          "group": {
+            "S": "A"
+          },
+          "homeTeam": {
+            "M": {
+              "name": {
+                "S": "República Checa"
+              },
+              "flag": {
+                "S": "🇨🇿"
+              }
+            }
+          },
+          "awayTeam": {
+            "M": {
+              "name": {
+                "S": "Sudáfrica"
+              },
+              "flag": {
+                "S": "🇿🇦"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

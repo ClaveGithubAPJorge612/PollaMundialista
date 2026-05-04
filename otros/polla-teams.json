@@ -1,0 +1,304 @@
+{
+  "polla-teams": [
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "mex"
+            },
+            "teamName": {
+                "S": "México"
+                },
+            "group": {
+                "S": "A"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "rsa"
+            },
+            "teamName": {
+                "S": "Sudáfrica"
+                },
+            "group": {
+                "S": "A"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "kor"
+            },
+            "teamName": {
+                "S": "Corea del Sur"
+                },
+            "group": {
+                "S": "A"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "cze"
+            },
+            "teamName": {
+                "S": "República Checa"
+                },
+            "group": {
+                "S": "A"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "can"
+            },
+            "teamName": {
+                "S": "Canadá"
+                },
+            "group": {
+                "S": "B"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "bih"
+            },
+            "teamName": {
+                "S": "Bosnia y Herzegovina"
+                },
+            "group": {
+                "S": "B"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "qat"
+            },
+            "teamName": {
+                "S": "Catar"
+                },
+            "group": {
+                "S": "B"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "sui"
+            },
+            "teamName": {
+                "S": "Suiza"
+                },
+            "group": {
+                "S": "B"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "bra"
+            },
+            "teamName": {
+                "S": "Brasil"
+                },
+            "group": {
+                "S": "C"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "mar"
+            },
+            "teamName": {
+                "S": "Marruecos"
+                },
+            "group": {
+                "S": "C"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "hai"
+            },
+            "teamName": {
+                "S": "Haití"
+                },
+            "group": {
+                "S": "C"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "sco"
+            },
+            "teamName": {
+                "S": "Escocia"
+                },
+            "group": {
+                "S": "C"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "usa"
+            },
+            "teamName": {
+                "S": "Estados Unidos"
+                },
+            "group": {
+                "S": "D"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "par"
+            },
+            "teamName": {
+                "S": "Paraguay"
+                },
+            "group": {
+                "S": "D"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "aus"
+            },
+            "teamName": {
+                "S": "Australia"
+                },
+            "group": {
+                "S": "D"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "tur"
+            },
+            "teamName": {
+                "S": "Turquía"
+                },
+            "group": {
+                "S": "D"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "ger"
+            },
+            "teamName": {
+                "S": "Alemania"
+                },
+            "group": {
+                "S": "E"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "cuw"
+            },
+            "teamName": {
+                "S": "Curaçao"
+                },
+            "group": {
+                "S": "E"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "civ"
+            },
+            "teamName": {
+                "S": "Costa de Marfil"
+                },
+            "group": {
+                "S": "E"
+                }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item": {
+            "teamId": {
+                "S": "ecu"
+            },
+            "teamName": {
+                "S": "Ecuador"
+                },
+            "group": {
+                "S": "E"
+                }
+            }
+        }
+    }
+    ]
+}
