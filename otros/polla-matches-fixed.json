@@ -1,0 +1,2090 @@
+[
+  {
+    "matchId": "match_A_MD1_1",
+    "group": "A",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-11",
+    "time": "15:00",
+    "kickoff": "2026-06-11T15:00:00",
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de México",
+    "country": "México",
+    "capacity": 83357,
+    "homeTeam": {
+      "id": "mex",
+      "name": "México",
+      "flag": "🇲🇽",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "rsa",
+      "name": "Sudáfrica",
+      "flag": "🇿🇦",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_A_MD1_2",
+    "group": "A",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-11",
+    "time": "22:00",
+    "kickoff": "2026-06-11T22:00:00",
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "México",
+    "capacity": 49850,
+    "homeTeam": {
+      "id": "kor",
+      "name": "Corea del Sur",
+      "flag": "🇰🇷",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "cze",
+      "name": "República Checa",
+      "flag": "🇨🇿",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_A_MD2_1",
+    "group": "A",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-18",
+    "time": "12:00",
+    "kickoff": "2026-06-18T12:00:00",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, GA",
+    "country": "USA",
+    "capacity": 71000,
+    "homeTeam": {
+      "id": "mex",
+      "name": "México",
+      "flag": "🇲🇽",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "kor",
+      "name": "Corea del Sur",
+      "flag": "🇰🇷",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_A_MD2_2",
+    "group": "A",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-18",
+    "time": "21:00",
+    "kickoff": "2026-06-18T21:00:00",
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "México",
+    "capacity": 49850,
+    "homeTeam": {
+      "id": "rsa",
+      "name": "Sudáfrica",
+      "flag": "🇿🇦",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "cze",
+      "name": "República Checa",
+      "flag": "🇨🇿",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_A_MD3_1",
+    "group": "A",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "21:00",
+    "kickoff": "2026-06-24T21:00:00",
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de México",
+    "country": "México",
+    "capacity": 83357,
+    "homeTeam": {
+      "id": "mex",
+      "name": "México",
+      "flag": "🇲🇽",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "cze",
+      "name": "República Checa",
+      "flag": "🇨🇿",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_A_MD3_2",
+    "group": "A",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "21:00",
+    "kickoff": "2026-06-24T21:00:00",
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "México",
+    "capacity": 49850,
+    "homeTeam": {
+      "id": "rsa",
+      "name": "Sudáfrica",
+      "flag": "🇿🇦",
+      "group": "A"
+    },
+    "awayTeam": {
+      "id": "kor",
+      "name": "Corea del Sur",
+      "flag": "🇰🇷",
+      "group": "A"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD1_1",
+    "group": "B",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-12",
+    "time": "15:00",
+    "kickoff": "2026-06-12T15:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "can",
+      "name": "Canadá",
+      "flag": "🇨🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "bih",
+      "name": "Bosnia y Herzegovina",
+      "flag": "🇧🇦",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD1_2",
+    "group": "B",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-13",
+    "time": "15:00",
+    "kickoff": "2026-06-13T15:00:00",
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, CA",
+    "country": "USA",
+    "capacity": 68500,
+    "homeTeam": {
+      "id": "qat",
+      "name": "Catar",
+      "flag": "🇶🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "sui",
+      "name": "Suiza",
+      "flag": "🇨🇭",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD2_1",
+    "group": "B",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-18",
+    "time": "15:00",
+    "kickoff": "2026-06-18T15:00:00",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, CA",
+    "country": "USA",
+    "capacity": 70000,
+    "homeTeam": {
+      "id": "can",
+      "name": "Canadá",
+      "flag": "🇨🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "qat",
+      "name": "Catar",
+      "flag": "🇶🇦",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD2_2",
+    "group": "B",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-18",
+    "time": "18:00",
+    "kickoff": "2026-06-18T18:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "bih",
+      "name": "Bosnia y Herzegovina",
+      "flag": "🇧🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "sui",
+      "name": "Suiza",
+      "flag": "🇨🇭",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD3_1",
+    "group": "B",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "15:00",
+    "kickoff": "2026-06-24T15:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "can",
+      "name": "Canadá",
+      "flag": "🇨🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "sui",
+      "name": "Suiza",
+      "flag": "🇨🇭",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_B_MD3_2",
+    "group": "B",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "15:00",
+    "kickoff": "2026-06-24T15:00:00",
+    "stadium": "Lumen Field",
+    "city": "Seattle, WA",
+    "country": "USA",
+    "capacity": 68740,
+    "homeTeam": {
+      "id": "bih",
+      "name": "Bosnia y Herzegovina",
+      "flag": "🇧🇦",
+      "group": "B"
+    },
+    "awayTeam": {
+      "id": "qat",
+      "name": "Catar",
+      "flag": "🇶🇦",
+      "group": "B"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD1_1",
+    "group": "C",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-13",
+    "time": "18:00",
+    "kickoff": "2026-06-13T18:00:00",
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, NJ",
+    "country": "USA",
+    "capacity": 82500,
+    "homeTeam": {
+      "id": "bra",
+      "name": "Brasil",
+      "flag": "🇧🇷",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "mar",
+      "name": "Marruecos",
+      "flag": "🇲🇦",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD1_2",
+    "group": "C",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-13",
+    "time": "21:00",
+    "kickoff": "2026-06-13T21:00:00",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, MA",
+    "country": "USA",
+    "capacity": 65878,
+    "homeTeam": {
+      "id": "hai",
+      "name": "Haití",
+      "flag": "🇭🇹",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "sco",
+      "name": "Escocia",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD2_1",
+    "group": "C",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-19",
+    "time": "18:00",
+    "kickoff": "2026-06-19T18:00:00",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, MA",
+    "country": "USA",
+    "capacity": 65878,
+    "homeTeam": {
+      "id": "bra",
+      "name": "Brasil",
+      "flag": "🇧🇷",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "hai",
+      "name": "Haití",
+      "flag": "🇭🇹",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD2_2",
+    "group": "C",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-19",
+    "time": "21:00",
+    "kickoff": "2026-06-19T21:00:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, PA",
+    "country": "USA",
+    "capacity": 69800,
+    "homeTeam": {
+      "id": "mar",
+      "name": "Marruecos",
+      "flag": "🇲🇦",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "sco",
+      "name": "Escocia",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD3_1",
+    "group": "C",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "18:00",
+    "kickoff": "2026-06-24T18:00:00",
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami Gardens, FL",
+    "country": "USA",
+    "capacity": 64767,
+    "homeTeam": {
+      "id": "bra",
+      "name": "Brasil",
+      "flag": "🇧🇷",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "sco",
+      "name": "Escocia",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_C_MD3_2",
+    "group": "C",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-24",
+    "time": "18:00",
+    "kickoff": "2026-06-24T18:00:00",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, GA",
+    "country": "USA",
+    "capacity": 71000,
+    "homeTeam": {
+      "id": "mar",
+      "name": "Marruecos",
+      "flag": "🇲🇦",
+      "group": "C"
+    },
+    "awayTeam": {
+      "id": "hai",
+      "name": "Haití",
+      "flag": "🇭🇹",
+      "group": "C"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD1_1",
+    "group": "D",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-12",
+    "time": "21:00",
+    "kickoff": "2026-06-12T21:00:00",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, CA",
+    "country": "USA",
+    "capacity": 70000,
+    "homeTeam": {
+      "id": "usa",
+      "name": "Estados Unidos",
+      "flag": "🇺🇸",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "par",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD1_2",
+    "group": "D",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-13",
+    "time": "00:00",
+    "kickoff": "2026-06-13T00:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "aus",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "tur",
+      "name": "Turquía",
+      "flag": "🇹🇷",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD2_1",
+    "group": "D",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-19",
+    "time": "15:00",
+    "kickoff": "2026-06-19T15:00:00",
+    "stadium": "Lumen Field",
+    "city": "Seattle, WA",
+    "country": "USA",
+    "capacity": 68740,
+    "homeTeam": {
+      "id": "usa",
+      "name": "Estados Unidos",
+      "flag": "🇺🇸",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "aus",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD2_2",
+    "group": "D",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-19",
+    "time": "00:00",
+    "kickoff": "2026-06-19T00:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "par",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "tur",
+      "name": "Turquía",
+      "flag": "🇹🇷",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD3_1",
+    "group": "D",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "22:00",
+    "kickoff": "2026-06-25T22:00:00",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, CA",
+    "country": "USA",
+    "capacity": 70000,
+    "homeTeam": {
+      "id": "usa",
+      "name": "Estados Unidos",
+      "flag": "🇺🇸",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "tur",
+      "name": "Turquía",
+      "flag": "🇹🇷",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_D_MD3_2",
+    "group": "D",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "22:00",
+    "kickoff": "2026-06-25T22:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "par",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "group": "D"
+    },
+    "awayTeam": {
+      "id": "aus",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "group": "D"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD1_1",
+    "group": "E",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-14",
+    "time": "13:00",
+    "kickoff": "2026-06-14T13:00:00",
+    "stadium": "NRG Stadium",
+    "city": "Houston, TX",
+    "country": "USA",
+    "capacity": 72220,
+    "homeTeam": {
+      "id": "ger",
+      "name": "Alemania",
+      "flag": "🇩🇪",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "cuw",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD1_2",
+    "group": "E",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-14",
+    "time": "19:00",
+    "kickoff": "2026-06-14T19:00:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, PA",
+    "country": "USA",
+    "capacity": 69800,
+    "homeTeam": {
+      "id": "civ",
+      "name": "Costa de Marfil",
+      "flag": "🇨🇮",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "ecu",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD2_1",
+    "group": "E",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "16:00",
+    "kickoff": "2026-06-20T16:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "ger",
+      "name": "Alemania",
+      "flag": "🇩🇪",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "civ",
+      "name": "Costa de Marfil",
+      "flag": "🇨🇮",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD2_2",
+    "group": "E",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "22:00",
+    "kickoff": "2026-06-20T22:00:00",
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, MO",
+    "country": "USA",
+    "capacity": 76416,
+    "homeTeam": {
+      "id": "cuw",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "ecu",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD3_1",
+    "group": "E",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "16:00",
+    "kickoff": "2026-06-25T16:00:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, PA",
+    "country": "USA",
+    "capacity": 69800,
+    "homeTeam": {
+      "id": "ger",
+      "name": "Alemania",
+      "flag": "🇩🇪",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "ecu",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_E_MD3_2",
+    "group": "E",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "16:00",
+    "kickoff": "2026-06-25T16:00:00",
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, NJ",
+    "country": "USA",
+    "capacity": 82500,
+    "homeTeam": {
+      "id": "cuw",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "group": "E"
+    },
+    "awayTeam": {
+      "id": "civ",
+      "name": "Costa de Marfil",
+      "flag": "🇨🇮",
+      "group": "E"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD1_1",
+    "group": "F",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-14",
+    "time": "16:00",
+    "kickoff": "2026-06-14T16:00:00",
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "capacity": 80000,
+    "homeTeam": {
+      "id": "ned",
+      "name": "Países Bajos",
+      "flag": "🇳🇱",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "jpn",
+      "name": "Japón",
+      "flag": "🇯🇵",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD1_2",
+    "group": "F",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-14",
+    "time": "22:00",
+    "kickoff": "2026-06-14T22:00:00",
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "México",
+    "capacity": 51348,
+    "homeTeam": {
+      "id": "swe",
+      "name": "Suecia",
+      "flag": "🇸🇪",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "tun",
+      "name": "Túnez",
+      "flag": "🇹🇳",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD2_1",
+    "group": "F",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "13:00",
+    "kickoff": "2026-06-20T13:00:00",
+    "stadium": "NRG Stadium",
+    "city": "Houston, TX",
+    "country": "USA",
+    "capacity": 72220,
+    "homeTeam": {
+      "id": "ned",
+      "name": "Países Bajos",
+      "flag": "🇳🇱",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "swe",
+      "name": "Suecia",
+      "flag": "🇸🇪",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD2_2",
+    "group": "F",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "00:00",
+    "kickoff": "2026-06-20T00:00:00",
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "México",
+    "capacity": 51348,
+    "homeTeam": {
+      "id": "jpn",
+      "name": "Japón",
+      "flag": "🇯🇵",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "tun",
+      "name": "Túnez",
+      "flag": "🇹🇳",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD3_1",
+    "group": "F",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "19:00",
+    "kickoff": "2026-06-25T19:00:00",
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "capacity": 80000,
+    "homeTeam": {
+      "id": "ned",
+      "name": "Países Bajos",
+      "flag": "🇳🇱",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "tun",
+      "name": "Túnez",
+      "flag": "🇹🇳",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_F_MD3_2",
+    "group": "F",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-25",
+    "time": "19:00",
+    "kickoff": "2026-06-25T19:00:00",
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, MO",
+    "country": "USA",
+    "capacity": 76416,
+    "homeTeam": {
+      "id": "jpn",
+      "name": "Japón",
+      "flag": "🇯🇵",
+      "group": "F"
+    },
+    "awayTeam": {
+      "id": "swe",
+      "name": "Suecia",
+      "flag": "🇸🇪",
+      "group": "F"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD1_1",
+    "group": "G",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-15",
+    "time": "15:00",
+    "kickoff": "2026-06-15T15:00:00",
+    "stadium": "Lumen Field",
+    "city": "Seattle, WA",
+    "country": "USA",
+    "capacity": 68740,
+    "homeTeam": {
+      "id": "bel",
+      "name": "Bélgica",
+      "flag": "🇧🇪",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "egy",
+      "name": "Egipto",
+      "flag": "🇪🇬",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD1_2",
+    "group": "G",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-15",
+    "time": "21:00",
+    "kickoff": "2026-06-15T21:00:00",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, CA",
+    "country": "USA",
+    "capacity": 70000,
+    "homeTeam": {
+      "id": "irn",
+      "name": "Irán",
+      "flag": "🇮🇷",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "nzl",
+      "name": "Nueva Zelanda",
+      "flag": "🇳🇿",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD2_1",
+    "group": "G",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "16:00",
+    "kickoff": "2026-06-20T16:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "bel",
+      "name": "Bélgica",
+      "flag": "🇧🇪",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "irn",
+      "name": "Irán",
+      "flag": "🇮🇷",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD2_2",
+    "group": "G",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-20",
+    "time": "23:00",
+    "kickoff": "2026-06-20T23:00:00",
+    "stadium": "Lumen Field",
+    "city": "Seattle, WA",
+    "country": "USA",
+    "capacity": 68740,
+    "homeTeam": {
+      "id": "egy",
+      "name": "Egipto",
+      "flag": "🇪🇬",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "nzl",
+      "name": "Nueva Zelanda",
+      "flag": "🇳🇿",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD3_1",
+    "group": "G",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "23:00",
+    "kickoff": "2026-06-26T23:00:00",
+    "stadium": "Lumen Field",
+    "city": "Seattle, WA",
+    "country": "USA",
+    "capacity": 68740,
+    "homeTeam": {
+      "id": "bel",
+      "name": "Bélgica",
+      "flag": "🇧🇪",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "nzl",
+      "name": "Nueva Zelanda",
+      "flag": "🇳🇿",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_G_MD3_2",
+    "group": "G",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "23:00",
+    "kickoff": "2026-06-26T23:00:00",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "capacity": 54500,
+    "homeTeam": {
+      "id": "egy",
+      "name": "Egipto",
+      "flag": "🇪🇬",
+      "group": "G"
+    },
+    "awayTeam": {
+      "id": "irn",
+      "name": "Irán",
+      "flag": "🇮🇷",
+      "group": "G"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD1_1",
+    "group": "H",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-15",
+    "time": "12:00",
+    "kickoff": "2026-06-15T12:00:00",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, GA",
+    "country": "USA",
+    "capacity": 71000,
+    "homeTeam": {
+      "id": "esp",
+      "name": "España",
+      "flag": "🇪🇸",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "cpv",
+      "name": "Cabo Verde",
+      "flag": "🇨🇻",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD1_2",
+    "group": "H",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-15",
+    "time": "18:00",
+    "kickoff": "2026-06-15T18:00:00",
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami Gardens, FL",
+    "country": "USA",
+    "capacity": 64767,
+    "homeTeam": {
+      "id": "ksa",
+      "name": "Arabia Saudita",
+      "flag": "🇸🇦",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "uru",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD2_1",
+    "group": "H",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-21",
+    "time": "12:00",
+    "kickoff": "2026-06-21T12:00:00",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, GA",
+    "country": "USA",
+    "capacity": 71000,
+    "homeTeam": {
+      "id": "esp",
+      "name": "España",
+      "flag": "🇪🇸",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "ksa",
+      "name": "Arabia Saudita",
+      "flag": "🇸🇦",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD2_2",
+    "group": "H",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-21",
+    "time": "18:00",
+    "kickoff": "2026-06-21T18:00:00",
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami Gardens, FL",
+    "country": "USA",
+    "capacity": 64767,
+    "homeTeam": {
+      "id": "cpv",
+      "name": "Cabo Verde",
+      "flag": "🇨🇻",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "uru",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD3_1",
+    "group": "H",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "20:00",
+    "kickoff": "2026-06-26T20:00:00",
+    "stadium": "NRG Stadium",
+    "city": "Houston, TX",
+    "country": "USA",
+    "capacity": 72220,
+    "homeTeam": {
+      "id": "esp",
+      "name": "España",
+      "flag": "🇪🇸",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "uru",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_H_MD3_2",
+    "group": "H",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "20:00",
+    "kickoff": "2026-06-26T20:00:00",
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "México",
+    "capacity": 49850,
+    "homeTeam": {
+      "id": "cpv",
+      "name": "Cabo Verde",
+      "flag": "🇨🇻",
+      "group": "H"
+    },
+    "awayTeam": {
+      "id": "ksa",
+      "name": "Arabia Saudita",
+      "flag": "🇸🇦",
+      "group": "H"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD1_1",
+    "group": "I",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-16",
+    "time": "15:00",
+    "kickoff": "2026-06-16T15:00:00",
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, NJ",
+    "country": "USA",
+    "capacity": 82500,
+    "homeTeam": {
+      "id": "fra",
+      "name": "Francia",
+      "flag": "🇫🇷",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "sen",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD1_2",
+    "group": "I",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-16",
+    "time": "18:00",
+    "kickoff": "2026-06-16T18:00:00",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, MA",
+    "country": "USA",
+    "capacity": 65878,
+    "homeTeam": {
+      "id": "irq",
+      "name": "Irak",
+      "flag": "🇮🇶",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "nor",
+      "name": "Noruega",
+      "flag": "🇳🇴",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD2_1",
+    "group": "I",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-22",
+    "time": "17:00",
+    "kickoff": "2026-06-22T17:00:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, PA",
+    "country": "USA",
+    "capacity": 69800,
+    "homeTeam": {
+      "id": "fra",
+      "name": "Francia",
+      "flag": "🇫🇷",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "irq",
+      "name": "Irak",
+      "flag": "🇮🇶",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD2_2",
+    "group": "I",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-22",
+    "time": "20:00",
+    "kickoff": "2026-06-22T20:00:00",
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, NJ",
+    "country": "USA",
+    "capacity": 82500,
+    "homeTeam": {
+      "id": "sen",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "nor",
+      "name": "Noruega",
+      "flag": "🇳🇴",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD3_1",
+    "group": "I",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "15:00",
+    "kickoff": "2026-06-26T15:00:00",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, MA",
+    "country": "USA",
+    "capacity": 65878,
+    "homeTeam": {
+      "id": "fra",
+      "name": "Francia",
+      "flag": "🇫🇷",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "nor",
+      "name": "Noruega",
+      "flag": "🇳🇴",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_I_MD3_2",
+    "group": "I",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-26",
+    "time": "15:00",
+    "kickoff": "2026-06-26T15:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "sen",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "group": "I"
+    },
+    "awayTeam": {
+      "id": "irq",
+      "name": "Irak",
+      "flag": "🇮🇶",
+      "group": "I"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD1_1",
+    "group": "J",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-16",
+    "time": "21:00",
+    "kickoff": "2026-06-16T21:00:00",
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, MO",
+    "country": "USA",
+    "capacity": 76416,
+    "homeTeam": {
+      "id": "arg",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "alg",
+      "name": "Argelia",
+      "flag": "🇩🇿",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD1_2",
+    "group": "J",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-16",
+    "time": "00:00",
+    "kickoff": "2026-06-16T00:00:00",
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, CA",
+    "country": "USA",
+    "capacity": 68500,
+    "homeTeam": {
+      "id": "aut",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "jor",
+      "name": "Jordania",
+      "flag": "🇯🇴",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD2_1",
+    "group": "J",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-22",
+    "time": "13:00",
+    "kickoff": "2026-06-22T13:00:00",
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "capacity": 80000,
+    "homeTeam": {
+      "id": "arg",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "aut",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD2_2",
+    "group": "J",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-22",
+    "time": "23:00",
+    "kickoff": "2026-06-22T23:00:00",
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, CA",
+    "country": "USA",
+    "capacity": 68500,
+    "homeTeam": {
+      "id": "alg",
+      "name": "Argelia",
+      "flag": "🇩🇿",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "jor",
+      "name": "Jordania",
+      "flag": "🇯🇴",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD3_1",
+    "group": "J",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "22:00",
+    "kickoff": "2026-06-27T22:00:00",
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, MO",
+    "country": "USA",
+    "capacity": 76416,
+    "homeTeam": {
+      "id": "arg",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "jor",
+      "name": "Jordania",
+      "flag": "🇯🇴",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_J_MD3_2",
+    "group": "J",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "22:00",
+    "kickoff": "2026-06-27T22:00:00",
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "capacity": 80000,
+    "homeTeam": {
+      "id": "alg",
+      "name": "Argelia",
+      "flag": "🇩🇿",
+      "group": "J"
+    },
+    "awayTeam": {
+      "id": "aut",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "group": "J"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD1_1",
+    "group": "K",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-17",
+    "time": "13:00",
+    "kickoff": "2026-06-17T13:00:00",
+    "stadium": "NRG Stadium",
+    "city": "Houston, TX",
+    "country": "USA",
+    "capacity": 72220,
+    "homeTeam": {
+      "id": "por",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "cod",
+      "name": "República del Congo",
+      "flag": "🇨🇩",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD1_2",
+    "group": "K",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-17",
+    "time": "22:00",
+    "kickoff": "2026-06-17T22:00:00",
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de México",
+    "country": "México",
+    "capacity": 83357,
+    "homeTeam": {
+      "id": "uzb",
+      "name": "Uzbekistán",
+      "flag": "🇺🇿",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "col",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD2_1",
+    "group": "K",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-23",
+    "time": "13:00",
+    "kickoff": "2026-06-23T13:00:00",
+    "stadium": "NRG Stadium",
+    "city": "Houston, TX",
+    "country": "USA",
+    "capacity": 72220,
+    "homeTeam": {
+      "id": "por",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "uzb",
+      "name": "Uzbekistán",
+      "flag": "🇺🇿",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD2_2",
+    "group": "K",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-23",
+    "time": "22:00",
+    "kickoff": "2026-06-23T22:00:00",
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "México",
+    "capacity": 49850,
+    "homeTeam": {
+      "id": "cod",
+      "name": "República del Congo",
+      "flag": "🇨🇩",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "col",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD3_1",
+    "group": "K",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "19:30",
+    "kickoff": "2026-06-27T19:30:00",
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami Gardens, FL",
+    "country": "USA",
+    "capacity": 64767,
+    "homeTeam": {
+      "id": "por",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "col",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_K_MD3_2",
+    "group": "K",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "19:30",
+    "kickoff": "2026-06-27T19:30:00",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta, GA",
+    "country": "USA",
+    "capacity": 71000,
+    "homeTeam": {
+      "id": "cod",
+      "name": "República del Congo",
+      "flag": "🇨🇩",
+      "group": "K"
+    },
+    "awayTeam": {
+      "id": "uzb",
+      "name": "Uzbekistán",
+      "flag": "🇺🇿",
+      "group": "K"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD1_1",
+    "group": "L",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-17",
+    "time": "16:00",
+    "kickoff": "2026-06-17T16:00:00",
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "capacity": 80000,
+    "homeTeam": {
+      "id": "eng",
+      "name": "Inglaterra",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "cro",
+      "name": "Croacia",
+      "flag": "🇭🇷",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD1_2",
+    "group": "L",
+    "phase": "group",
+    "matchday": 1,
+    "date": "2026-06-17",
+    "time": "19:00",
+    "kickoff": "2026-06-17T19:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "gha",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "pan",
+      "name": "Panamá",
+      "flag": "🇵🇦",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD2_1",
+    "group": "L",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-23",
+    "time": "16:00",
+    "kickoff": "2026-06-23T16:00:00",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, MA",
+    "country": "USA",
+    "capacity": 65878,
+    "homeTeam": {
+      "id": "eng",
+      "name": "Inglaterra",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "gha",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD2_2",
+    "group": "L",
+    "phase": "group",
+    "matchday": 2,
+    "date": "2026-06-23",
+    "time": "19:00",
+    "kickoff": "2026-06-23T19:00:00",
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "capacity": 30000,
+    "homeTeam": {
+      "id": "cro",
+      "name": "Croacia",
+      "flag": "🇭🇷",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "pan",
+      "name": "Panamá",
+      "flag": "🇵🇦",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD3_1",
+    "group": "L",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "17:00",
+    "kickoff": "2026-06-27T17:00:00",
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, NJ",
+    "country": "USA",
+    "capacity": 82500,
+    "homeTeam": {
+      "id": "eng",
+      "name": "Inglaterra",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "pan",
+      "name": "Panamá",
+      "flag": "🇵🇦",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  },
+  {
+    "matchId": "match_L_MD3_2",
+    "group": "L",
+    "phase": "group",
+    "matchday": 3,
+    "date": "2026-06-27",
+    "time": "17:00",
+    "kickoff": "2026-06-27T17:00:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, PA",
+    "country": "USA",
+    "capacity": 69800,
+    "homeTeam": {
+      "id": "cro",
+      "name": "Croacia",
+      "flag": "🇭🇷",
+      "group": "L"
+    },
+    "awayTeam": {
+      "id": "gha",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "group": "L"
+    },
+    "result": null,
+    "scorers": [],
+    "status": "upcoming",
+    "tbd": false
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "teamId": "mex",
+    "group": "A",
+    "name": "México",
+    "flag": "🇲🇽"
+  },
+  {
+    "teamId": "rsa",
+    "group": "A",
+    "name": "Sudáfrica",
+    "flag": "🇿🇦"
+  },
+  {
+    "teamId": "kor",
+    "group": "A",
+    "name": "Corea del Sur",
+    "flag": "🇰🇷"
+  },
+  {
+    "teamId": "cze",
+    "group": "A",
+    "name": "República Checa",
+    "flag": "🇨🇿"
+  },
+  {
+    "teamId": "can",
+    "group": "B",
+    "name": "Canadá",
+    "flag": "🇨🇦"
+  },
+  {
+    "teamId": "bih",
+    "group": "B",
+    "name": "Bosnia y Herzegovina",
+    "flag": "🇧🇦"
+  },
+  {
+    "teamId": "qat",
+    "group": "B",
+    "name": "Catar",
+    "flag": "🇶🇦"
+  },
+  {
+    "teamId": "sui",
+    "group": "B",
+    "name": "Suiza",
+    "flag": "🇨🇭"
+  },
+  {
+    "teamId": "bra",
+    "group": "C",
+    "name": "Brasil",
+    "flag": "🇧🇷"
+  },
+  {
+    "teamId": "mar",
+    "group": "C",
+    "name": "Marruecos",
+    "flag": "🇲🇦"
+  },
+  {
+    "teamId": "hai",
+    "group": "C",
+    "name": "Haití",
+    "flag": "🇭🇹"
+  },
+  {
+    "teamId": "sco",
+    "group": "C",
+    "name": "Escocia",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+  },
+  {
+    "teamId": "usa",
+    "group": "D",
+    "name": "Estados Unidos",
+    "flag": "🇺🇸"
+  },
+  {
+    "teamId": "par",
+    "group": "D",
+    "name": "Paraguay",
+    "flag": "🇵🇾"
+  },
+  {
+    "teamId": "aus",
+    "group": "D",
+    "name": "Australia",
+    "flag": "🇦🇺"
+  },
+  {
+    "teamId": "tur",
+    "group": "D",
+    "name": "Turquía",
+    "flag": "🇹🇷"
+  },
+  {
+    "teamId": "ger",
+    "group": "E",
+    "name": "Alemania",
+    "flag": "🇩🇪"
+  },
+  {
+    "teamId": "cuw",
+    "group": "E",
+    "name": "Curaçao",
+    "flag": "🇨🇼"
+  },
+  {
+    "teamId": "civ",
+    "group": "E",
+    "name": "Costa de Marfil",
+    "flag": "🇨🇮"
+  },
+  {
+    "teamId": "ecu",
+    "group": "E",
+    "name": "Ecuador",
+    "flag": "🇪🇨"
+  },
+  {
+    "teamId": "ned",
+    "group": "F",
+    "name": "Países Bajos",
+    "flag": "🇳🇱"
+  },
+  {
+    "teamId": "jpn",
+    "group": "F",
+    "name": "Japón",
+    "flag": "🇯🇵"
+  },
+  {
+    "teamId": "swe",
+    "group": "F",
+    "name": "Suecia",
+    "flag": "🇸🇪"
+  },
+  {
+    "teamId": "tun",
+    "group": "F",
+    "name": "Túnez",
+    "flag": "🇹🇳"
+  },
+  {
+    "teamId": "bel",
+    "group": "G",
+    "name": "Bélgica",
+    "flag": "🇧🇪"
+  },
+  {
+    "teamId": "egy",
+    "group": "G",
+    "name": "Egipto",
+    "flag": "🇪🇬"
+  },
+  {
+    "teamId": "irn",
+    "group": "G",
+    "name": "Irán",
+    "flag": "🇮🇷"
+  },
+  {
+    "teamId": "nzl",
+    "group": "G",
+    "name": "Nueva Zelanda",
+    "flag": "🇳🇿"
+  },
+  {
+    "teamId": "esp",
+    "group": "H",
+    "name": "España",
+    "flag": "🇪🇸"
+  },
+  {
+    "teamId": "cpv",
+    "group": "H",
+    "name": "Cabo Verde",
+    "flag": "🇨🇻"
+  },
+  {
+    "teamId": "ksa",
+    "group": "H",
+    "name": "Arabia Saudita",
+    "flag": "🇸🇦"
+  },
+  {
+    "teamId": "uru",
+    "group": "H",
+    "name": "Uruguay",
+    "flag": "🇺🇾"
+  },
+  {
+    "teamId": "fra",
+    "group": "I",
+    "name": "Francia",
+    "flag": "🇫🇷"
+  },
+  {
+    "teamId": "sen",
+    "group": "I",
+    "name": "Senegal",
+    "flag": "🇸🇳"
+  },
+  {
+    "teamId": "irq",
+    "group": "I",
+    "name": "Irak",
+    "flag": "🇮🇶"
+  },
+  {
+    "teamId": "nor",
+    "group": "I",
+    "name": "Noruega",
+    "flag": "🇳🇴"
+  },
+  {
+    "teamId": "arg",
+    "group": "J",
+    "name": "Argentina",
+    "flag": "🇦🇷"
+  },
+  {
+    "teamId": "alg",
+    "group": "J",
+    "name": "Argelia",
+    "flag": "🇩🇿"
+  },
+  {
+    "teamId": "aut",
+    "group": "J",
+    "name": "Austria",
+    "flag": "🇦🇹"
+  },
+  {
+    "teamId": "jor",
+    "group": "J",
+    "name": "Jordania",
+    "flag": "🇯🇴"
+  },
+  {
+    "teamId": "por",
+    "group": "K",
+    "name": "Portugal",
+    "flag": "🇵🇹"
+  },
+  {
+    "teamId": "cod",
+    "group": "K",
+    "name": "República del Congo",
+    "flag": "🇨🇩"
+  },
+  {
+    "teamId": "uzb",
+    "group": "K",
+    "name": "Uzbekistán",
+    "flag": "🇺🇿"
+  },
+  {
+    "teamId": "col",
+    "group": "K",
+    "name": "Colombia",
+    "flag": "🇨🇴"
+  },
+  {
+    "teamId": "eng",
+    "group": "L",
+    "name": "Inglaterra",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+  },
+  {
+    "teamId": "cro",
+    "group": "L",
+    "name": "Croacia",
+    "flag": "🇭🇷"
+  },
+  {
+    "teamId": "gha",
+    "group": "L",
+    "name": "Ghana",
+    "flag": "🇬🇭"
+  },
+  {
+    "teamId": "pan",
+    "group": "L",
+    "name": "Panamá",
+    "flag": "🇵🇦"
+  }
+]
