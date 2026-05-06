@@ -5,7 +5,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { getMatches } from '../services/dynamodb';
+import { getMatches, getMatchPredictions, getAllUsers } from '../services/dynamodb';
 import { STADIUMS } from '../data/mockData';
 import { FlagIcon } from '../utils/flagUtils';
 
@@ -101,15 +101,44 @@ function MatchModal({ match, onClose }) {
   const modalRef = useRef(null);
   const isFinished = match.status === 'finished';
   const isTBD      = match.tbd;
+  const isStarted  = new Date(match.kickoff) <= new Date() && match.status === 'upcoming';
   const phaseColor = PHASE_COLORS[match.phase] || 'var(--text-dim)';
 
   const stad = STADIUMS.find(s => s.name === match.stadium);
+
+  // Transparency modal state
+  const [showTransparency, setShowTransparency] = useState(false);
+  const [otherPreds, setOtherPreds] = useState([]);
+  const [users, setUsers] = useState({});
+  const [loadingPreds, setLoadingPreds] = useState(false);
 
   useEffect(() => {
     if (modalRef.current) {
       modalRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [match]);
+
+  const loadOtherPredictions = async () => {
+    setLoadingPreds(true);
+    try {
+      const [matchPreds, allUsers] = await Promise.all([
+        getMatchPredictions(match.matchId),
+        getAllUsers()
+      ]);
+      
+      // Create users map
+      const usersMap = {};
+      allUsers.forEach(u => usersMap[u.id] = u);
+      setUsers(usersMap);
+      
+      setOtherPreds(matchPreds);
+      setShowTransparency(true);
+    } catch (e) {
+      console.error('Error loading predictions:', e);
+    } finally {
+      setLoadingPreds(false);
+    }
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -158,6 +187,20 @@ function MatchModal({ match, onClose }) {
           </div>
         )}
 
+        {/* Transparency button */}
+        {isStarted && !isTBD && (
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <button
+              className="btn btn-outline"
+              style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+              onClick={loadOtherPredictions}
+              disabled={loadingPreds}
+            >
+              {loadingPreds ? 'Cargando...' : '👁️ Ver pronósticos de otros'}
+            </button>
+          </div>
+        )}
+
         {/* Scorers */}
         {isFinished && match.scorers?.length > 0 && (
           <div className="modal-scorers">
@@ -198,6 +241,30 @@ function MatchModal({ match, onClose }) {
           {match.country && <InfoItem icon="🌎" label="País sede" value={match.country} />}
           {stad && <InfoItem icon="👥" label="Capacidad" value={stad.capacity.toLocaleString()} />}
         </div>
+
+        {/* Transparency predictions */}
+        {showTransparency && (
+          <div className="modal-transparency">
+            <div className="bangers modal-section-title">👁️ Pronósticos de otros usuarios</div>
+            {otherPreds.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '1rem', color: 'var(--text-dim)' }}>
+                Aún no hay pronósticos para este partido.
+              </div>
+            ) : (
+              <div className="transparency-list">
+                {otherPreds.map(pred => {
+                  const userInfo = users[pred.userId];
+                  return (
+                    <div key={pred.id} className="transparency-item">
+                      <span style={{ fontWeight: '600' }}>{userInfo?.name || `Usuario ${pred.userId.slice(-4)}`}</span>
+                      <span className="bangers" style={{ color: 'var(--green)' }}>{pred.homeGoals} - {pred.awayGoals}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <style>{`
@@ -281,6 +348,16 @@ function MatchModal({ match, onClose }) {
         }
         .scorer-player { font-weight: 600; }
         .scorer-minute { color: var(--green); font-size: 0.8rem; }
+
+        .modal-transparency { margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+        .transparency-list { display: flex; flex-direction: column; gap: 0.5rem; max-height: 200px; overflow-y: auto; }
+        .transparency-item {
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 8px 12px;
+          background: var(--surface3);
+          border-radius: var(--r-sm);
+          border: 1px solid var(--border);
+        }
 
         .modal-info-grid {
           display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;

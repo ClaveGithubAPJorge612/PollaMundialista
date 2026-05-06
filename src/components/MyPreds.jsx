@@ -4,7 +4,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 
 import { useEffect, useState, useCallback } from 'react';
-import { getMatches, getUserPredictions, savePrediction } from '../services/dynamodb';
+import { getMatches, getUserPredictions, savePrediction, getMatchPredictions, getAllUsers } from '../services/dynamodb';
 import { useAuth } from '../hooks/useAuth';
 import { FlagIcon } from '../utils/flagUtils';
 
@@ -18,15 +18,22 @@ function PointsBadge({ pts }) {
 }
 
 /* ── Single prediction row ── */
-function PredRow({ match, pred, onSave, saving }) {
-  const isLocked = new Date(match.kickoff) <= new Date();
+function PredRow({ match, pred, onSave, saving, user }) {
+  const isLocked = match.status !== 'upcoming' || new Date(match.kickoff) <= new Date();
   const isFinished = match.status === 'finished';
+  const isStarted = new Date(match.kickoff) <= new Date() && match.status === 'upcoming';
 
   const [home, setHome] = useState(pred?.homeGoals ?? '');
   const [away, setAway] = useState(pred?.awayGoals ?? '');
   const [dirty, setDirty] = useState(false);
   const [localErr, setLocalErr] = useState('');
   const [saved, setSaved] = useState(false);
+
+  // Modal state
+  const [isOtherPredictionsOpen, setIsOtherPredictionsOpen] = useState(false);
+  const [otherPredictions, setOtherPredictions] = useState([]);
+  const [users, setUsers] = useState({});
+  const [isLoadingOtherPredictions, setIsLoadingOtherPredictions] = useState(false);
 
   const change = (setter) => (e) => {
     const v = e.target.value.replace(/\D/g, '').slice(0, 2);
@@ -48,6 +55,30 @@ function PredRow({ match, pred, onSave, saving }) {
       setTimeout(() => setSaved(false), 2500);
     } catch (e) {
       setLocalErr(e.message);
+    }
+  };
+
+  const loadOtherPredictions = async () => {
+    setIsLoadingOtherPredictions(true);
+    try {
+      const [matchPreds, allUsers] = await Promise.all([
+        getMatchPredictions(match.matchId),
+        getAllUsers()
+      ]);
+      
+      // Create users map
+      const usersMap = {};
+      allUsers.forEach(u => usersMap[u.id] = u);
+      setUsers(usersMap);
+      
+      // Filter out current user's prediction
+      const otherPredictionList = matchPreds.filter(p => p.userId !== user.id);
+      setOtherPredictions(otherPredictionList);
+      setIsOtherPredictionsOpen(true);
+    } catch (e) {
+      console.error('Error loading predictions:', e);
+    } finally {
+      setIsLoadingOtherPredictions(false);
     }
   };
 
@@ -127,11 +158,78 @@ function PredRow({ match, pred, onSave, saving }) {
               {localErr && <span style={{ fontSize: '0.78rem', color: '#ff9999' }}>{localErr}</span>}
             </>
           )}
+          {isStarted && (
+            <button
+              className="btn btn-outline"
+              style={{ padding: '5px 12px', fontSize: '0.8rem', marginLeft: '8px' }}
+              onClick={loadOtherPredictions}
+              disabled={isLoadingOtherPredictions}
+            >
+              {isLoadingOtherPredictions ? '...' : '👁️ Ver predicciones'}
+            </button>
+          )}
           {!isLocked && !pred && (
             <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>Sin predicción aún</span>
           )}
         </div>
       </div>
+
+      {/* Modal for other predictions */}
+      {isOtherPredictionsOpen && (
+        <div className="modal-overlay" onClick={() => setIsOtherPredictionsOpen(false)}>
+          <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setIsOtherPredictionsOpen(false)}>✕</button>
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 style={{ margin: '0 0 1rem 0', color: 'var(--text)' }}>Predicciones de otros usuarios</h3>
+              <div style={{ padding: '1rem', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                  <FlagIcon teamId={match.homeTeam.id} size="1.2rem" />
+                  <span className="bangers" style={{ fontSize: '1.1rem' }}>{match.homeTeam.name}</span>
+                  <span style={{ color: 'var(--text-dim)' }}>vs</span>
+                  <span className="bangers" style={{ fontSize: '1.1rem' }}>{match.awayTeam.name}</span>
+                  <FlagIcon teamId={match.awayTeam.id} size="1.2rem" />
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-dim)' }}>
+                  Grupo {match.group}{match.matchday} · {new Date(match.kickoff).toLocaleDateString('es-CO', {
+                    weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {otherPredictions.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-dim)' }}>
+                Aún no hay predicciones de otros usuarios para este partido.
+              </div>
+            ) : (
+              <div className="predictions-list">
+                {otherPredictions.map(otherPrediction => {
+                  const userInfo = users[otherPrediction.userId];
+                  return (
+                    <div key={otherPrediction.id} className="prediction-item" style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '0.75rem',
+                      border: '1px solid var(--border)',
+                      borderRadius: '6px',
+                      marginBottom: '0.5rem',
+                      background: 'var(--bg-primary)'
+                    }}>
+                      <div style={{ fontWeight: '500' }}>
+                        {userInfo?.name || `Usuario ${otherPrediction.userId.slice(-4)}`}
+                      </div>
+                      <div className="bangers" style={{ fontSize: '1.1rem', color: 'var(--primary)' }}>
+                        {otherPrediction.homeGoals} - {otherPrediction.awayGoals}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -250,6 +348,7 @@ export default function MyPreds() {
                   pred={predMap[m.matchId]}
                   onSave={handleSave}
                   saving={saving}
+                  user={user}
                 />
               ))}
           </div>
@@ -315,7 +414,7 @@ export default function MyPreds() {
         .pred-list { display: flex; flex-direction: column; gap: 0.6rem; }
 
         .pred-row {
-          background: var(--surface2);
+          background: #132a3beb;
           border: 1px solid var(--border);
           border-radius: var(--r-md);
           padding: 0.8rem 1rem;
