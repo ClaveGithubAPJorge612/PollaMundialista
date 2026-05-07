@@ -174,7 +174,7 @@ const RESULTS = {
 const SCHEDULE = {
   A: {
     MD1: [
-      { date: '2026-06-11', time: '15:00', stadium: 'azteca'  },
+      { date: '2026-05-05', time: '15:00', stadium: 'azteca'  },
       { date: '2026-06-11', time: '22:00', stadium: 'akron'   },
     ],
     MD2: [
